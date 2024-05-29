@@ -1,0 +1,320 @@
+[gd_scene load_steps=40 format=3 uid="uid://cj4br3f7jmobq"]
+
+[ext_resource type="Texture2D" uid="uid://dg4xbanwi5uxr" path="res://assets/图片/background.png" id="1_5sf3q"]
+[ext_resource type="Script" path="res://页面/首页/首页.gd" id="1_xddyb"]
+[ext_resource type="Texture2D" uid="uid://diysxj2wimc5c" path="res://assets/图标/爱心框.png" id="2_k2oh6"]
+[ext_resource type="Texture2D" uid="uid://cichyhigvmkto" path="res://assets/图标/太阳.png" id="2_x3kvu"]
+[ext_resource type="Texture2D" uid="uid://dtgoput3w2xkg" path="res://assets/图标/爱心.png" id="3_o1re5"]
+[ext_resource type="Texture2D" uid="uid://bydsa0838x84o" path="res://assets/图标/太阳框.png" id="3_rs4e3"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="4_cnwq8"]
+[ext_resource type="Texture2D" uid="uid://ci2i1oekonho2" path="res://assets/图标/灯泡框.png" id="7_r24e4"]
+[ext_resource type="Texture2D" uid="uid://cimuq3c7qp05h" path="res://assets/图标/灯泡.png" id="8_thua4"]
+[ext_resource type="Texture2D" uid="uid://djc2aw48ekhir" path="res://assets/图片/figure1.png" id="9_e2m65"]
+[ext_resource type="Texture2D" uid="uid://dhc4cys1pre6y" path="res://assets/图标/木马normal.svg" id="10_8f3gm"]
+[ext_resource type="Texture2D" uid="uid://dlmvrdpm2bn8h" path="res://assets/图标/木马hover.svg" id="11_2vwse"]
+[ext_resource type="Texture2D" uid="uid://bxwkuckna07vg" path="res://assets/图标/木马focus.svg" id="12_6ybxc"]
+[ext_resource type="Texture2D" uid="uid://bbe2gugril61g" path="res://assets/图片/泡泡.webp" id="13_o1iuk"]
+[ext_resource type="Texture2D" uid="uid://uridgb108r53" path="res://assets/图标/书本normal.svg" id="13_wl1v6"]
+[ext_resource type="Texture2D" uid="uid://8whkrnty7coj" path="res://assets/图片/泡泡1.webp" id="14_1pvo3"]
+[ext_resource type="Texture2D" uid="uid://dc1u30pkli4uu" path="res://assets/图标/书本hover.svg" id="14_qq5ni"]
+[ext_resource type="Texture2D" uid="uid://cli2eklf2lmnv" path="res://assets/图标/书本focus.svg" id="15_5yt53"]
+[ext_resource type="Texture2D" uid="uid://db0016u8gvdck" path="res://assets/图标/金币normal.svg" id="16_cbkl0"]
+[ext_resource type="Texture2D" uid="uid://dwuiehd32356d" path="res://assets/图标/金币hover.svg" id="17_hx44i"]
+[ext_resource type="Texture2D" uid="uid://0a102e8vswmu" path="res://assets/图标/金币focus.svg" id="18_2mdlo"]
+[ext_resource type="Texture2D" uid="uid://bb75axh5t0r8y" path="res://assets/图标/奖杯normal.svg" id="19_6rjcg"]
+[ext_resource type="Texture2D" uid="uid://c2t2riceyv53c" path="res://assets/图标/奖杯hover.svg" id="20_ldf0d"]
+[ext_resource type="Texture2D" uid="uid://gpt66ewa6qpx" path="res://assets/图标/奖杯focus.svg" id="21_f5lqh"]
+[ext_resource type="Texture2D" uid="uid://dyowkaqrcpvl3" path="res://assets/图标/设置.svg" id="24_iupna"]
+[ext_resource type="Texture2D" uid="uid://caoc2yt0o5s5v" path="res://assets/图标/说明.svg" id="25_ds23i"]
+[ext_resource type="Texture2D" uid="uid://dfo16hqifcg0t" path="res://assets/图标/设置focus.svg" id="25_yqhii"]
+[ext_resource type="Texture2D" uid="uid://dut81oto1hdvi" path="res://assets/图标/说明focus.svg" id="26_h0ipj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ayes"]
+bg_color = Color(0.866667, 0.815686, 0.756863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thvg3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 20
+border_width_top = 20
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yl7t8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 10
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7vqs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 40
+border_width_top = 135
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itr6v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 60
+border_width_right = 100
+border_color = Color(0.8, 0.8, 0.792157, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4nme"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 85
+border_width_top = 60
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqpwo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 80
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdgb7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 175
+border_width_top = 105
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hmc7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_bottom = 25
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt7mg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dl0g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 18
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -402.0
+offset_bottom = 686.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xddyb")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 1334.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ayes")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_5sf3q")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_thvg3")
+
+[node name="vbox" type="VBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2"]
+layout_mode = 2
+
+[node name="生命条" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
+
+[node name="生命条" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条/生命条"]
+layout_mode = 2
+value = 28.0
+texture_under = ExtResource("2_k2oh6")
+texture_progress = ExtResource("3_o1re5")
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条/生命条"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("4_cnwq8")
+theme_override_font_sizes/font_size = 38
+text = "  生命"
+
+[node name="心情值" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
+
+[node name="心情值" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值/心情值"]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("3_rs4e3")
+texture_progress = ExtResource("2_x3kvu")
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值/心情值"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("4_cnwq8")
+theme_override_font_sizes/font_size = 38
+text = "  心情"
+
+[node name="智力值" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
+
+[node name="智力值" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值/智力值"]
+layout_mode = 2
+value = 78.0
+texture_under = ExtResource("7_r24e4")
+texture_progress = ExtResource("8_thua4")
+
+[node name="Label" type="Label" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值/智力值"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("4_cnwq8")
+theme_override_font_sizes/font_size = 38
+text = "  智力"
+
+[node name="Figure1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(342, 861)
+scale = Vector2(0.35625, 0.35625)
+texture = ExtResource("9_e2m65")
+
+[node name="选择部分" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7vqs")
+
+[node name="选择" type="GridContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分"]
+layout_mode = 2
+columns = 2
+
+[node name="娱乐" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_itr6v")
+
+[node name="娱乐按钮" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/娱乐"]
+layout_mode = 2
+texture_normal = ExtResource("10_8f3gm")
+texture_hover = ExtResource("11_2vwse")
+texture_focused = ExtResource("12_6ybxc")
+
+[node name="学习" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4nme")
+
+[node name="学习按钮" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/学习"]
+layout_mode = 2
+texture_normal = ExtResource("13_wl1v6")
+texture_hover = ExtResource("14_qq5ni")
+texture_focused = ExtResource("15_5yt53")
+
+[node name="攒钱" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mqpwo")
+
+[node name="攒钱" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/攒钱"]
+layout_mode = 2
+texture_normal = ExtResource("16_cbkl0")
+texture_hover = ExtResource("17_hx44i")
+texture_focused = ExtResource("18_2mdlo")
+
+[node name="成就" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdgb7")
+
+[node name="成就" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/成就"]
+layout_mode = 2
+texture_normal = ExtResource("19_6rjcg")
+texture_hover = ExtResource("20_ldf0d")
+texture_focused = ExtResource("21_f5lqh")
+
+[node name="泡泡1-1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(181.74, 449.773)
+scale = Vector2(1.32544, 1.32544)
+texture = ExtResource("13_o1iuk")
+metadata/_edit_group_ = true
+
+[node name="泡泡1-2" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(184, 452)
+texture = ExtResource("14_1pvo3")
+metadata/_edit_group_ = true
+
+[node name="泡泡2-1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(536.08, 503.51)
+scale = Vector2(1.405, 1.405)
+texture = ExtResource("13_o1iuk")
+metadata/_edit_group_ = true
+
+[node name="泡泡2-2" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(540.08, 503.51)
+rotation = 0.0436332
+scale = Vector2(1.04, 1.04)
+texture = ExtResource("14_1pvo3")
+metadata/_edit_group_ = true
+
+[node name="泡泡3-1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(115.2, 739.15)
+scale = Vector2(1.325, 1.325)
+texture = ExtResource("13_o1iuk")
+metadata/_edit_group_ = true
+
+[node name="泡泡3-2" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(117.2, 740.15)
+rotation = 0.0855211
+texture = ExtResource("14_1pvo3")
+metadata/_edit_group_ = true
+
+[node name="泡泡4-1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(612.2, 756.15)
+scale = Vector2(1.325, 1.325)
+texture = ExtResource("13_o1iuk")
+metadata/_edit_group_ = true
+
+[node name="泡泡4-2" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+position = Vector2(614.2, 757.15)
+rotation = -0.34383
+texture = ExtResource("14_1pvo3")
+metadata/_edit_group_ = true
+
+[node name="设置说明" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_8hmc7")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明"]
+layout_mode = 2
+columns = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xt7mg")
+
+[node name="设置" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明/GridContainer/PanelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("24_iupna")
+texture_focused = ExtResource("25_yqhii")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_4dl0g")
+
+[node name="说明" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明/GridContainer/PanelContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("25_ds23i")
+texture_focused = ExtResource("26_h0ipj")
+
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/娱乐/娱乐按钮" to="." method="_on_娱乐按钮_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/学习/学习按钮" to="." method="_on_学习按钮_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/攒钱/攒钱" to="." method="_on_攒钱_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/成就/成就" to="." method="_on_成就_pressed"]

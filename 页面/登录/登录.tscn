@@ -1,0 +1,235 @@
+[gd_scene load_steps=12 format=3 uid="uid://bl7lasws1jqir"]
+
+[ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_76uai"]
+[ext_resource type="Script" path="res://页面/登录/登录.gd" id="1_plsbl"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ofra"]
+bg_color = Color(0.866667, 0.815686, 0.756863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2mi7"]
+bg_color = Color(0.431373, 0.431373, 0.431373, 0)
+border_width_left = 80
+border_width_top = 390
+border_width_right = 80
+border_width_bottom = 440
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdnt0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 35
+corner_radius_bottom_left = 35
+expand_margin_right = 291.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv5gn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt8vu"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.705882, 0.627451, 0.537255, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.705882, 0.627451, 0.537255, 1)
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqeli"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.933367, 0.908719, 0.878054, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.187176, 0.187176, 0.187176, 0.6)
+shadow_size = 20
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vocip"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.187176, 0.187176, 0.187176, 0.6)
+shadow_size = 20
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ek8y"]
+bg_color = Color(0.87, 0.81722, 0.7569, 1)
+
+[node name="登录" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_plsbl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 750.0
+offset_bottom = 1334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ofra")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0.54902)
+layout_mode = 2
+texture = ExtResource("1_76uai")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n2mi7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/TextureRect/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="邮箱" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="邮箱" type="Label" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/邮箱"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdnt0")
+text = "邮箱"
+
+[node name="输入邮箱" type="LineEdit" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/邮箱"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/caret_color = Color(0.258303, 0.230552, 0.225926, 1)
+theme_override_colors/font_placeholder_color = Color(0.45665, 0.415178, 0.408255, 1)
+theme_override_colors/font_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_qv5gn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qv5gn")
+placeholder_text = "请输入邮箱"
+caret_blink = true
+
+[node name="密码" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="密码" type="Label" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/密码"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdnt0")
+text = "密码"
+
+[node name="输入密码" type="LineEdit" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/密码"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/caret_color = Color(0.258303, 0.230552, 0.225926, 1)
+theme_override_colors/font_placeholder_color = Color(0.45665, 0.415178, 0.408255, 1)
+theme_override_colors/font_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxFlat_qv5gn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qv5gn")
+placeholder_text = "请输入密码"
+caret_blink = true
+secret = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="返回" type="Button" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.206589, 0.182871, 0.180252, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_xt8vu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nqeli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nqeli")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vocip")
+text = "返 回"
+
+[node name="登录" type="Button" parent="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.206589, 0.182871, 0.180252, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.207843, 0.184314, 0.180392, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_xt8vu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nqeli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nqeli")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vocip")
+text = "登 录"
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+initial_position = 2
+size = Vector2i(440, 220)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ek8y")
+
+[node name="PanelContainer" type="PanelContainer" parent="PopupPanel"]
+custom_minimum_size = Vector2(400, 200)
+offset_right = 440.0
+offset_bottom = 220.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/PanelContainer"]
+layout_mode = 2
+
+[node name="失败" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 50
+text = "邮箱未注册
+或密码错误"
+horizontal_alignment = 1
+
+[node name="关闭弹窗" type="Button" parent="PopupPanel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 32
+text = "关闭"
+
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/返回" to="." method="_on_返回_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/登录" to="." method="_on_登录_pressed"]
+[connection signal="pressed" from="PopupPanel/PanelContainer/VBoxContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]
