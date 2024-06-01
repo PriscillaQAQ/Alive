@@ -26,7 +26,7 @@ func _on_登录_pressed():
 	pass # Replace with function body.
 	
 func on_login_succeeded(auth):
-	get_tree().change_scene_to_file("res://页面/首页.tscn")
+	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass
 
 func on_login_failed(error_code,message):
