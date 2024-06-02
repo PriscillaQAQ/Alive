@@ -7,8 +7,8 @@ func _ready():
 
 
 func _on_娱乐按钮_pressed():
-	pass
-	get_tree().change_scene_to_file()
+	
+	#get_tree().change_scene_to_file()
 	pass # Replace with function body.
 
 
