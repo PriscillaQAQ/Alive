@@ -10,6 +10,9 @@ extends Control
 func _ready():
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
+	
+	#if Firebase.Auth.check_auth_file():
+		#get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass # Replace with function body.
 
 
@@ -26,6 +29,8 @@ func _on_登录_pressed():
 	pass # Replace with function body.
 	
 func on_login_succeeded(auth):
+	#Firebase.Auth.save_auth(auth)
+	
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass
 
@@ -41,3 +46,5 @@ func _on_关闭弹窗_pressed():
 	passwordNode.clear()
 	popupPanel.hide()
 	pass # Replace with function body.
+	
+	

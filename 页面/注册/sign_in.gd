@@ -18,6 +18,7 @@ func _ready():
 
 	Firebase.Auth.signup_succeeded.connect(on_signup_succeeded)
 	Firebase.Auth.signup_failed.connect(on_signup_failed)
+	
 	pass # Replace with function body.
 
 
