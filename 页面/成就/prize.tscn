@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkdd41ldr4oty"]
 
-[ext_resource type="Texture2D" uid="uid://cjqyomvyc82xy" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
+[ext_resource type="Texture2D" uid="uid://cn2nlk28ajol8" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uktd"]
 bg_color = Color(0.353438, 0.353438, 0.353438, 1)
