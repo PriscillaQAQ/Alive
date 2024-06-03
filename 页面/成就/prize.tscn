@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkdd41ldr4oty"]
+
+[ext_resource type="Texture2D" uid="uid://cjqyomvyc82xy" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uktd"]
+bg_color = Color(0.353438, 0.353438, 0.353438, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.713726, 0.713726, 0.713726, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="prize" type="VBoxContainer"]
+theme_override_constants/separation = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0uktd")
+
+[node name="prize_class" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_dyv0h")
+
+[node name="prize_name" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.411169, 0.32935, 0.243864, 1)
+theme_override_font_sizes/font_size = 25
+text = "这是什么奖"
+horizontal_alignment = 1
