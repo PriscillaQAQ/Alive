@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5b0yfrghuysc"]
+
+[ext_resource type="PackedScene" uid="uid://dgpqsqi25oj5y" path="res://addons/Calendar/calendar_month.tscn" id="1_g037o"]
+[ext_resource type="Script" path="res://addons/date_picker.gd" id="2_tl6vb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4twm"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nl0ba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mewa"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0.784314, 0.784314, 0.784314, 0.4)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktopc"]
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+bg_color = Color(0.94902, 0.960784, 0.976471, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PanelContainer" type="PanelContainer"]
+offset_right = 350.0
+offset_bottom = 253.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4twm")
+script = ExtResource("2_tl6vb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="pre_year_btn" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktopc")
+text = "上一年"
+
+[node name="year_label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 2.08165e-12)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_font_sizes/font_size = 16
+text = "2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_year_btn" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktopc")
+text = "下一年"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="pre_month_btn" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktopc")
+text = "上一月"
+
+[node name="month_label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_month_btn" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktopc")
+text = "下一月"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="month_calendar" parent="VBoxContainer" instance=ExtResource("1_g037o")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 200)
+layout_mode = 2
+
+[node name="month_label" parent="VBoxContainer/month_calendar/VBoxContainer" index="0"]
+visible = false
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer/pre_year_btn" to="." method="_on_pre_year_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer/next_year_btn" to="." method="_on_next_year_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer2/pre_month_btn" to="." method="_on_pre_month_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer2/next_month_btn" to="." method="_on_next_month_btn_pressed"]
+
+[editable path="VBoxContainer/month_calendar"]

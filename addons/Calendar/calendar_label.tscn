@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjbks6kanl6el"]
+
+[ext_resource type="Script" path="res://addons/Calendar/calendar_label.gd" id="1_ad4fw"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_oe82t"]
+[ext_resource type="StyleBox" uid="uid://6wbecojbkh1l" path="res://addons/Calendar/calendar_label_pressed.tres" id="2_v2fxa"]
+[ext_resource type="StyleBox" uid="uid://b4xjv5pthao0l" path="res://addons/Calendar/calendar_label_normal.tres" id="3_4fmlo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51gix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wflbn"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.886275, 0.886275, 0.886275, 0.4)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Label" type="Button"]
+custom_minimum_size = Vector2(36, 36)
+offset_right = 30.0
+offset_bottom = 35.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(0.505882, 0.505882, 0.505882, 1)
+theme_override_colors/font_focus_color = Color(0.94902, 0.960784, 0.976471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_fonts/font = ExtResource("1_oe82t")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = ExtResource("2_v2fxa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_51gix")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wflbn")
+theme_override_styles/pressed = ExtResource("2_v2fxa")
+theme_override_styles/normal = ExtResource("3_4fmlo")
+text = "9"
+script = ExtResource("1_ad4fw")
+label_type = "day_in_other"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

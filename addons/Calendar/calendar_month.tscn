@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgpqsqi25oj5y"]
+
+[ext_resource type="Script" path="res://addons/Calendar/calendar_month.gd" id="1_fw5sv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4klsd"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 300)
+offset_right = 300.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4klsd")
+script = ExtResource("1_fw5sv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="month_label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.282353, 0.254902, 1)
+theme_override_font_sizes/font_size = 20
+text = "一月"
+
+[node name="month_container" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 7

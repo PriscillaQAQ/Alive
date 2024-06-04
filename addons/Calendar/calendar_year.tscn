@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://c27acgj81p8f8"]
+
+[ext_resource type="Script" path="res://addons/Calendar/calendar_year.gd" id="2_bpfix"]
+[ext_resource type="Texture2D" uid="uid://beo4rekafxvfy" path="res://assets/图标/arrow-left.svg" id="2_sau2x"]
+[ext_resource type="Texture2D" uid="uid://dbwow1sc6yftp" path="res://assets/图标/arrowright.svg" id="3_pr12m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdv14"]
+content_margin_left = 40.0
+content_margin_top = 20.0
+content_margin_right = 40.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdeh6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljmx2"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(0.784314, 0.784314, 0.784314, 0.4)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brols"]
+content_margin_left = 2.0
+content_margin_top = 1.0
+content_margin_right = 2.0
+content_margin_bottom = 1.0
+bg_color = Color(0.94902, 0.960784, 0.976471, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kd00e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivcsl"]
+content_margin_left = 30.0
+content_margin_top = 1.0
+content_margin_right = 30.0
+content_margin_bottom = 1.0
+bg_color = Color(0.784314, 0.784314, 0.784314, 0.4)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm4cs"]
+content_margin_left = 30.0
+content_margin_top = 1.0
+content_margin_right = 30.0
+content_margin_bottom = 1.0
+bg_color = Color(0.94902, 0.960784, 0.976471, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu2ft"]
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(900, 2.08165e-12)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mdv14")
+script = ExtResource("2_bpfix")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "年月周日"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="year_label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_font_sizes/font_size = 90
+text = "2024"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_font_sizes/font_size = 90
+text = "年"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="pre_year_btn" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gdeh6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ljmx2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_brols")
+theme_override_styles/normal = SubResource("StyleBoxFlat_brols")
+icon = ExtResource("2_sau2x")
+
+[node name="today_btn" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.0666667, 0.341176, 0.25098, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kd00e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ivcsl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qm4cs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qm4cs")
+text = "今天"
+
+[node name="mext_year_btn" type="Button" parent="VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pu2ft")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ljmx2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_brols")
+theme_override_styles/normal = SubResource("StyleBoxFlat_brols")
+icon = ExtResource("3_pr12m")
+
+[node name="year_container" type="HFlowContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/pre_year_btn" to="." method="_on_pre_year_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/today_btn" to="." method="_on_today_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/HBoxContainer/mext_year_btn" to="." method="_on_mext_year_btn_pressed"]
