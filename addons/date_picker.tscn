@@ -51,8 +51,8 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="PanelContainer" type="PanelContainer"]
-offset_right = 350.0
-offset_bottom = 253.0
+offset_right = 400.0
+offset_bottom = 257.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x4twm")
 script = ExtResource("2_tl6vb")
 
