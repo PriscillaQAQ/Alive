@@ -41,5 +41,5 @@ func _on_today_btn_pressed():
 	_set_year(year_to_show)
 
 
-func _on_date_selected(date:Calendar.Date):
+func _on_date_selected(date:Date):
 	print(date)

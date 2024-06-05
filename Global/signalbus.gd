@@ -1,3 +1,3 @@
 extends Node
 
-signal date_selected(date:Calendar.Date)
+signal date_selected(date:Date)
