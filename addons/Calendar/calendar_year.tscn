@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://c27acgj81p8f8"]
 
 [ext_resource type="Script" path="res://addons/Calendar/calendar_year.gd" id="2_bpfix"]
-[ext_resource type="FontFile" uid="uid://de4x8mpgdismg" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_ppu0y"]
-[ext_resource type="Texture2D" uid="uid://d0agmbnjychc7" path="res://assets/图标/arrow-left.svg" id="2_sau2x"]
-[ext_resource type="Texture2D" uid="uid://i7htjhxxmp4" path="res://assets/图标/arrowright.svg" id="3_pr12m"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_ppu0y"]
+[ext_resource type="Texture2D" uid="uid://beo4rekafxvfy" path="res://assets/图标/arrow-left.svg" id="2_sau2x"]
+[ext_resource type="Texture2D" uid="uid://dbwow1sc6yftp" path="res://assets/图标/arrowright.svg" id="3_pr12m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdv14"]
 content_margin_left = 40.0

@@ -129,7 +129,7 @@ layout_mode = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条/生命条"]
 layout_mode = 2
-value = 28.0
+value = 99.0
 texture_under = ExtResource("2_k2oh6")
 texture_progress = ExtResource("3_o1re5")
 

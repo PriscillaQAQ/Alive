@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5b0yfrghuysc"]
+[gd_scene load_steps=8 format=3 uid="uid://c5b0yfrghuysc"]
 
 [ext_resource type="PackedScene" uid="uid://dgpqsqi25oj5y" path="res://addons/Calendar/calendar_month.tscn" id="1_g037o"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_lpixx"]
 [ext_resource type="Script" path="res://addons/date_picker.gd" id="2_tl6vb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4twm"]
@@ -63,7 +64,7 @@ theme_override_constants/separation = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -74,7 +75,8 @@ theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
@@ -86,7 +88,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 2.08165e-12)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -96,7 +99,8 @@ theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
@@ -114,7 +118,8 @@ theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")
@@ -127,7 +132,8 @@ custom_minimum_size = Vector2(60, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -138,7 +144,8 @@ theme_override_colors/font_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
 theme_override_colors/font_hover_color = Color(0.70173, 0.70173, 0.70173, 1)
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("2_lpixx")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nl0ba")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6mewa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ktopc")

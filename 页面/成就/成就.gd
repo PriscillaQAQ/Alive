@@ -25,4 +25,6 @@ func show_achievements():
 		prize_square_node.prize=prize
 		prize_container.add_child(prize_square_node)
 		
-		
+func _on_返回_pressed():
+	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
+	pass # Replace with function body.

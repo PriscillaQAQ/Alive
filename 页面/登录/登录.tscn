@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bl7lasws1jqir"]
+[gd_scene load_steps=12 format=3 uid="uid://b11a22age12n2"]
 
 [ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_76uai"]
 [ext_resource type="Script" path="res://页面/登录/登录.gd" id="1_plsbl"]
@@ -230,6 +230,38 @@ theme_override_fonts/font = ExtResource("3_watk8")
 theme_override_font_sizes/font_size = 32
 text = "关闭"
 
+[node name="PopupPanel2" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+initial_position = 2
+size = Vector2i(440, 220)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ek8y")
+
+[node name="PanelContainer" type="PanelContainer" parent="PopupPanel2"]
+custom_minimum_size = Vector2(400, 200)
+offset_right = 440.0
+offset_bottom = 220.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel2/PanelContainer"]
+layout_mode = 2
+
+[node name="失败" type="Label" parent="PopupPanel2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 50
+text = "邮箱未注册
+或密码错误"
+horizontal_alignment = 1
+
+[node name="关闭弹窗" type="Button" parent="PopupPanel2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_watk8")
+theme_override_font_sizes/font_size = 32
+text = "关闭"
+
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/返回" to="." method="_on_返回_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/登录" to="." method="_on_登录_pressed"]
 [connection signal="pressed" from="PopupPanel/PanelContainer/VBoxContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]
+[connection signal="pressed" from="PopupPanel2/PanelContainer/VBoxContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]

@@ -5,7 +5,10 @@ extends Control
 @onready var prize_class = %"奖杯"
 @onready var prize_note = %"备注"
 
-
+@onready var popup_panel = %PopupPanel
+@onready var p_add_failure_msg= %"失败"
+@onready var p_add_success_msg = %"成功"
+@onready var close_button = %"关闭弹窗"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,10 +51,13 @@ func _on_确认_pressed():
 		achievement.note=prize_note.text
 		achievement.classification=prize_class.selected
 		GlobalVariables.achievements.append(achievement)
+		
 		print(GlobalVariables.achievements)
-		# achievement.classification=
+		
+		show_success_msg()
 		pass
 	else:
+		show_failure_msg()
 		print('Error input.')
 	pass # Replace with function body.
 	
@@ -68,9 +74,35 @@ func deal_str_date(date_str:String) -> Date:
 	var day=int(date_array[2])
 	var date_date=Date.new(year,month,day)
 	return date_date
+
+func show_failure_msg():
+	p_add_failure_msg.show()
+	popup_panel.show()
 	
+func show_success_msg():
+	p_add_success_msg.show()
+	popup_panel.show()
+	clear_prize_node()
+
+func _on_关闭弹窗_pressed():
+	popup_panel.hide()
+	p_add_failure_msg.hide()
+	p_add_success_msg.hide()
+	pass # Replace with function body.
 	
 
+	
+func _on_成就名称_focus_entered():
+	datePcker.hide()
+	pass # Replace with function body.
+
+func _on_奖杯_button_up():
+	datePcker.hide()
+	pass # Replace with function body.
+
+func _on_备注_focus_entered():
+	datePcker.hide()
+	pass # Replace with function body.
 
 
 
