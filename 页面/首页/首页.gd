@@ -8,12 +8,15 @@ func _ready():
 
 
 func _on_娱乐按钮_pressed():
-	
+	GlobalVariables.page_status=2
+	get_tree().change_scene_to_file("res://页面/日程管理/学习娱乐.tscn")
 	#get_tree().change_scene_to_file()
 	pass # Replace with function body.
 
 
 func _on_学习按钮_pressed():
+	GlobalVariables.page_status=1
+	get_tree().change_scene_to_file("res://页面/日程管理/学习娱乐.tscn")
 	pass # Replace with function body.
 
 

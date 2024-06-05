@@ -7,8 +7,11 @@ var mood:int
 var iq:int
 var achievements:Array[Achievement]
 var tasks:Array[Task]
+var page_status:int
 
 var COLLECTION_ID="Alive"
+
+
 
 #####=========================
 ##### 日期相关操作
