@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cjbks6kanl6el"]
 
 [ext_resource type="Script" path="res://addons/Calendar/calendar_label.gd" id="1_ad4fw"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_oe82t"]
+[ext_resource type="FontFile" uid="uid://de4x8mpgdismg" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_oe82t"]
 [ext_resource type="StyleBox" uid="uid://6wbecojbkh1l" path="res://addons/Calendar/calendar_label_pressed.tres" id="2_v2fxa"]
 [ext_resource type="StyleBox" uid="uid://b4xjv5pthao0l" path="res://addons/Calendar/calendar_label_normal.tres" id="3_4fmlo"]
 
