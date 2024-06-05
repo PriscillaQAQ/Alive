@@ -15,6 +15,8 @@ func _ready():
 	GlobalVariables.cal.set_first_weekday(Time.WEEKDAY_SUNDAY)
 	month_calendar.year = current_year
 	month_calendar.month = current_month
+	month_label.text= str(month_names[current_month-1])+'月'
+	year_label.text=str(current_year)
 	_update_year_label()
 
 func _update_calendar():

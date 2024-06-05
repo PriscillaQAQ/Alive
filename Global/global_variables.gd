@@ -5,7 +5,8 @@ var uuid_util=preload("res://addons/uuidv5/v5.gd")
 var life:int
 var mood:int
 var iq:int
-var user_data:String
+var achievements:Array[Achievement]
+var tasks:Array[Task]
 
 var COLLECTION_ID="Alive"
 
@@ -24,6 +25,9 @@ func format_date(date:Calendar.Date)->String:
 	return '%d/%02d/%02d' % [date.year,date.month,date.day]
 
 
+#####=========================
+##### 云同步相关操作
+####==========================
 # task 对应存储位置
 
 func save_data():
@@ -34,8 +38,30 @@ func save_data():
 		var data:Dictionary={
 			"life": life,
 			"mood": mood,
-			"IQ":iq,
-			"User_data":user_data
+			"iq":iq,
+			"achievements":achievements,
+			"tasks":tasks
 		}
 		var task:FirestoreTask=collection.update(auth.localid,data)
+		
+func load_data():
+	var auth=Firebase.Auth.auth
+	if auth.localid:
+		var collection:FirestoreCollection=Firebase.Firestore.collection(GlobalVariables.COLLECTION_ID)
+		var task:FirestoreTask=collection.get_doc(auth.localid)
+		var finished_task:FirestoreTask=await task.task_finished
+		var document=finished_task.document
+		# 由于新用户doc_fields的值为Nil(空的)
+		if document && document.doc_fields:
+			GlobalVariables.life=document.doc_fields.life
+			GlobalVariables.mood=document.doc_fields.mood
+			GlobalVariables.iq=document.doc_fields.iq
+			GlobalVariables.achievements=document.doc_fields.achivements
+			GlobalVariables.tasks=document.doc_fields.tasks
+		else:#给默认值，后期再调整
+			GlobalVariables.life=100
+			GlobalVariables.mood=100
+			GlobalVariables.iq=100
+			GlobalVariables.achievements=[]
+			GlobalVariables.tasks=[]
 		

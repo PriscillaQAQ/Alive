@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://1pjjflpodcti"]
+
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_cdav6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcsgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bvch"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf8qo"]
+bg_color = Color(0.508958, 0.369671, 0.253557, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joiuv"]
+bg_color = Color(0.687532, 0.517587, 0.377374, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxwc7"]
+bg_color = Color(0.974622, 0.943553, 0.919447, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+
+[node name="SingleTask" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qcsgv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "5月23日"
+
+[node name="时间" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "13:00-17:00"
+
+[node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "信息系统分析与设计"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0bvch")
+
+[node name="备注" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
+theme_override_fonts/font = ExtResource("1_cdav6")
+theme_override_font_sizes/font_size = 25
+text = "备注"
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0bvch")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="编辑" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.905769, 0.905769, 0.905769, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cdav6")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_xf8qo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_joiuv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xf8qo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hxwc7")
+text = "编辑"
+
+[node name="完成" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.905769, 0.905769, 0.905769, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cdav6")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_xf8qo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_joiuv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xf8qo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hxwc7")
+text = "标为完成"
