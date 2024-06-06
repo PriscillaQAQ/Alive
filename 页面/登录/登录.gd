@@ -3,7 +3,16 @@ extends Control
 @onready var emailNode=%"输入邮箱"
 @onready var passwordNode=%"输入密码"
 
-@onready var popupPanel=%PopupPanel
+@onready var popupPanel=%PopupPanelContainer
+
+@onready var white_bg = $"白色背景板"
+
+@onready var video_stream_player = $VideoStreamPlayer
+@onready var video_stream_player_2 = $VideoStreamPlayer2
+@onready var video_stream_player_3 = $VideoStreamPlayer3
+@onready var video_stream_player_4 = $VideoStreamPlayer4
+@onready var video_stream_player_5 = $VideoStreamPlayer5
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,31 +29,47 @@ func _on_返回_pressed():
 	get_tree().change_scene_to_file("res://页面/初始页面/初始页.tscn")
 	pass # Replace with function body.
 
-
 func _on_登录_pressed():
+	show_loading_page()
 	var email=emailNode.text
 	var password=passwordNode.text
 	Firebase.Auth.login_with_email_and_password(email,password)
-
 	pass # Replace with function body.
 	
 func on_login_succeeded(auth):
+	close_loading_page()
 	#Firebase.Auth.save_auth(auth)
-	
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass
 
 func on_login_failed(error_code,message):
+	close_loading_page()
 	popupPanel.show()
 	print(error_code)
 	print(message)
 	pass
 
-
 func _on_关闭弹窗_pressed():
+	print(1)
 	emailNode.clear()
 	passwordNode.clear()
 	popupPanel.hide()
-	pass # Replace with function body.
 	
+func show_loading_page():
+	white_bg.show()
+	video_stream_player.show()
+	video_stream_player_2.show()
+	video_stream_player_3.show()
+	video_stream_player_4.show()
+	video_stream_player_5.show()
 	
+func close_loading_page():
+	white_bg.hide()
+	video_stream_player.hide()
+	video_stream_player_2.hide()
+	video_stream_player_3.hide()
+	video_stream_player_4.hide()
+	video_stream_player_5.hide()
+
+
+

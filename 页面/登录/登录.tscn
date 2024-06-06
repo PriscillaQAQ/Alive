@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bl7lasws1jqir"]
+[gd_scene load_steps=19 format=3 uid="uid://bl7lasws1jqir"]
 
-[ext_resource type="Texture2D" uid="uid://ckcxbfnfkfgcd" path="res://assets/图片/test.png" id="1_76uai"]
+[ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_76uai"]
 [ext_resource type="Script" path="res://页面/登录/登录.gd" id="1_plsbl"]
-[ext_resource type="FontFile" uid="uid://bgde8rdy0yax8" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
+[ext_resource type="StyleBox" uid="uid://tpntdso7nel4" path="res://页面/登录/登录弹窗.tres" id="4_dj5ua"]
 [ext_resource type="VideoStream" path="res://assets/视频/1running_jump.ogv" id="4_ky4c5"]
+[ext_resource type="Texture2D" uid="uid://3swvdndgomla" path="res://assets/图标/关闭 (1).svg" id="5_31eik"]
 [ext_resource type="VideoStream" path="res://assets/视频/2running_jump.ogv" id="5_igfab"]
 [ext_resource type="VideoStream" path="res://assets/视频/3running_jump.ogv" id="6_7uxxc"]
 [ext_resource type="VideoStream" path="res://assets/视频/4running_jump.ogv" id="7_rg3rc"]
@@ -80,9 +82,6 @@ corner_radius_bottom_left = 30
 shadow_color = Color(0.187176, 0.187176, 0.187176, 0.6)
 shadow_size = 20
 shadow_offset = Vector2(10, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ek8y"]
-bg_color = Color(0.87, 0.81722, 0.7569, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ccn1v"]
 blend_mode = 3
@@ -206,40 +205,39 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nqeli")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vocip")
 text = "登 录"
 
-[node name="PopupPanel" type="PopupPanel" parent="."]
+[node name="PopupPanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-initial_position = 2
-size = Vector2i(440, 220)
-theme_override_styles/panel = SubResource("StyleBoxFlat_5ek8y")
-
-[node name="PanelContainer" type="PanelContainer" parent="PopupPanel"]
 custom_minimum_size = Vector2(400, 200)
-offset_right = 440.0
-offset_bottom = 220.0
+layout_mode = 0
+offset_left = 175.0
+offset_top = 619.0
+offset_right = 575.0
+offset_bottom = 819.0
+theme_override_styles/panel = ExtResource("4_dj5ua")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/PanelContainer"]
+[node name="关闭弹窗" type="TextureButton" parent="PopupPanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("5_31eik")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanelContainer"]
 layout_mode = 2
 
-[node name="失败" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+[node name="失败" type="Label" parent="PopupPanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_colors/font_color = Color(0.203922, 0.184314, 0.180392, 1)
 theme_override_fonts/font = ExtResource("3_watk8")
 theme_override_font_sizes/font_size = 50
 text = "邮箱未注册
 或密码错误"
 horizontal_alignment = 1
 
-[node name="关闭弹窗" type="Button" parent="PopupPanel/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_watk8")
-theme_override_font_sizes/font_size = 32
-text = "关闭"
-
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-auto_translate_mode = 1
+[node name="白色背景板" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,6 +249,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ofra")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
 material = SubResource("CanvasItemMaterial_ccn1v")
 layout_mode = 1
 anchors_preset = 8
@@ -270,7 +269,7 @@ autoplay = true
 loop = true
 
 [node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
-auto_translate_mode = 1
+visible = false
 material = SubResource("CanvasItemMaterial_ccn1v")
 layout_mode = 1
 anchors_preset = 8
@@ -290,7 +289,7 @@ autoplay = true
 loop = true
 
 [node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="."]
-auto_translate_mode = 1
+visible = false
 material = SubResource("CanvasItemMaterial_ccn1v")
 layout_mode = 1
 anchors_preset = 8
@@ -310,7 +309,7 @@ autoplay = true
 loop = true
 
 [node name="VideoStreamPlayer4" type="VideoStreamPlayer" parent="."]
-auto_translate_mode = 1
+visible = false
 material = SubResource("CanvasItemMaterial_ccn1v")
 layout_mode = 1
 anchors_preset = 8
@@ -330,7 +329,7 @@ autoplay = true
 loop = true
 
 [node name="VideoStreamPlayer5" type="VideoStreamPlayer" parent="."]
-auto_translate_mode = 1
+visible = false
 material = SubResource("CanvasItemMaterial_ccn1v")
 layout_mode = 1
 anchors_preset = 8
@@ -351,4 +350,4 @@ loop = true
 
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/返回" to="." method="_on_返回_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/登录" to="." method="_on_登录_pressed"]
-[connection signal="pressed" from="PopupPanel/PanelContainer/VBoxContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]
+[connection signal="pressed" from="PopupPanelContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]
