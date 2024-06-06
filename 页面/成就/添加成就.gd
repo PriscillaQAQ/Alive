@@ -46,6 +46,7 @@ func _on_取消_pressed():
 func _on_确认_pressed():
 	if check_prize():
 		var achievement=Achievement.new()
+		achievement.id=GlobalVariables.uuid_util.v4()
 		achievement.name=prize_name.text
 		achievement.date=deal_str_date(date.text)
 		achievement.note=prize_note.text
@@ -90,7 +91,6 @@ func _on_关闭弹窗_pressed():
 	p_add_success_msg.hide()
 	pass # Replace with function body.
 	
-
 	
 func _on_成就名称_focus_entered():
 	datePcker.hide()
