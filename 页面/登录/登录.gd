@@ -37,6 +37,9 @@ func _on_登录_pressed():
 	pass # Replace with function body.
 	
 func on_login_succeeded(auth):
+	GlobalVariables.load_localid()
+	initial_data_save_path()
+	load_local_data()
 	close_loading_page()
 	#Firebase.Auth.save_auth(auth)
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
@@ -69,6 +72,15 @@ func close_loading_page():
 	video_stream_player_3.hide()
 	video_stream_player_4.hide()
 	video_stream_player_5.hide()
+
+func initial_data_save_path():
+	GlobalVariables.achievements_path=GlobalVariables.get_user_data_path("achievements.cfg")
+	GlobalVariables.tasks_path=GlobalVariables.get_user_data_path("tasks.cfg")
+	GlobalVariables.player_path=GlobalVariables.get_user_data_path("player.cfg")
+	print(GlobalVariables.achievements_path)
+	
+func load_local_data():
+	GlobalVariables.load_user_data(GlobalVariables.user_id)
 
 
 

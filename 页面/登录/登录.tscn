@@ -4,12 +4,12 @@
 [ext_resource type="Script" path="res://页面/登录/登录.gd" id="1_plsbl"]
 [ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
 [ext_resource type="StyleBox" uid="uid://tpntdso7nel4" path="res://页面/登录/登录弹窗.tres" id="4_dj5ua"]
-[ext_resource type="VideoStream" path="res://assets/视频/1running_jump.ogv" id="4_ky4c5"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump1.ogv" id="4_ky4c5"]
 [ext_resource type="Texture2D" uid="uid://3swvdndgomla" path="res://assets/图标/关闭 (1).svg" id="5_31eik"]
-[ext_resource type="VideoStream" path="res://assets/视频/2running_jump.ogv" id="5_igfab"]
-[ext_resource type="VideoStream" path="res://assets/视频/3running_jump.ogv" id="6_7uxxc"]
-[ext_resource type="VideoStream" path="res://assets/视频/4running_jump.ogv" id="7_rg3rc"]
-[ext_resource type="VideoStream" path="res://assets/视频/5running_jump.ogv" id="8_483j6"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump2.ogv" id="5_igfab"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump3.ogv" id="6_7uxxc"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump4.ogv" id="7_rg3rc"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump5.ogv" id="8_483j6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kchd"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)

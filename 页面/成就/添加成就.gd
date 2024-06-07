@@ -45,16 +45,10 @@ func _on_取消_pressed():
 	
 func _on_确认_pressed():
 	if check_prize():
-		var achievement=Achievement.new()
-		achievement.id=GlobalVariables.uuid_util.v4()
-		achievement.name=prize_name.text
-		achievement.date=deal_str_date(date.text)
-		achievement.note=prize_note.text
-		achievement.classification=prize_class.selected
-		GlobalVariables.achievements.append(achievement)
-		
+		add_achievement()
+		save_locally()
+		# GlobalVariables.save_data()
 		print(GlobalVariables.achievements)
-		
 		show_success_msg()
 		pass
 	else:
@@ -67,6 +61,20 @@ func check_prize():
 		return true
 	else:
 		return false
+
+func add_achievement():
+	var achievement=Achievement.new()
+	achievement.id=GlobalVariables.uuid_util.v4()
+	achievement.name=prize_name.text
+	achievement.date=deal_str_date(date.text)
+	achievement.note=prize_note.text
+	achievement.classification=prize_class.selected
+	GlobalVariables.achievements.append(achievement)
+
+func save_locally():
+	GlobalVariables.save_achievements(GlobalVariables.achievements_path)
+	pass
+	
 		
 func deal_str_date(date_str:String) -> Date:
 	var date_array=date_str.split('/')

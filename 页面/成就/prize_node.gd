@@ -15,6 +15,8 @@ func _ready():
 			picture=load("res://assets/图标/银成就120.svg")
 		elif prize.classification==2:
 			picture=load("res://assets/图标/铜成就120.svg")
+		elif prize.classification==3:
+			picture=load("res://assets/图标/证书120.svg")
 		prize_pic.texture=picture
 	else:
 		pass
