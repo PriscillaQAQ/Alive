@@ -1,8 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0piyoh53xxyj"]
+[gd_scene load_steps=22 format=3 uid="uid://c0piyoh53xxyj"]
 
 [ext_resource type="Script" path="res://页面/注册/sign_in.gd" id="1_n2wx8"]
 [ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_nu2dq"]
 [ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_f1peg"]
+[ext_resource type="StyleBox" uid="uid://tpntdso7nel4" path="res://页面/登录/登录弹窗.tres" id="4_cmq8w"]
+[ext_resource type="Texture2D" uid="uid://3swvdndgomla" path="res://assets/图标/关闭 (1).svg" id="5_ktaqh"]
+[ext_resource type="VideoStream" path="res://assets/视频/1running_jump.ogv" id="6_uv2el"]
+[ext_resource type="VideoStream" path="res://assets/视频/2running_jump.ogv" id="7_2fyv2"]
+[ext_resource type="VideoStream" path="res://assets/视频/3running_jump.ogv" id="8_fjwwb"]
+[ext_resource type="VideoStream" path="res://assets/视频/4running_jump.ogv" id="9_tcfpj"]
+[ext_resource type="VideoStream" path="res://assets/视频/5running_jump.ogv" id="10_5jf70"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ofra"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)
@@ -98,8 +105,11 @@ shadow_color = Color(0.187176, 0.187176, 0.187176, 0.6)
 shadow_size = 20
 shadow_offset = Vector2(10, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xy1v"]
-bg_color = Color(0.87, 0.81722, 0.7569, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hi7tn"]
+bg_color = Color(1, 1, 1, 0.772549)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i6q6c"]
+blend_mode = 3
 
 [node name="注册" type="Control"]
 layout_mode = 3
@@ -259,79 +269,192 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nqeli")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vocip")
 text = "注 册"
 
-[node name="PopupPanel" type="PopupPanel" parent="."]
+[node name="PopupPanelContainer" type="PanelContainer" parent="."]
 unique_name_in_owner = true
-initial_position = 2
-size = Vector2i(440, 220)
-theme_override_styles/panel = SubResource("StyleBoxFlat_5xy1v")
-
-[node name="PanelContainer" type="PanelContainer" parent="PopupPanel"]
+visible = false
 custom_minimum_size = Vector2(400, 200)
-offset_right = 440.0
-offset_bottom = 220.0
+offset_left = 157.0
+offset_top = 683.0
+offset_right = 597.0
+offset_bottom = 903.0
+theme_override_styles/panel = ExtResource("4_cmq8w")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/PanelContainer"]
+[node name="关闭弹窗" type="TextureButton" parent="PopupPanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("5_ktaqh")
 
-[node name="成功" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+[node name="成功" type="Label" parent="PopupPanelContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0.939771, 0.929408, 0.92766, 1)
+theme_override_colors/font_color = Color(0.203922, 0.184314, 0.180392, 1)
 theme_override_fonts/font = ExtResource("3_f1peg")
 theme_override_font_sizes/font_size = 50
 text = "注册成功"
 
-[node name="密码失败" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+[node name="密码失败" type="Label" parent="PopupPanelContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_colors/font_color = Color(0.203922, 0.184314, 0.180392, 1)
 theme_override_fonts/font = ExtResource("3_f1peg")
 theme_override_font_sizes/font_size = 50
 text = "注册失败
 密码长度不足"
 horizontal_alignment = 1
 
-[node name="邮箱失败" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+[node name="邮箱失败" type="Label" parent="PopupPanelContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_colors/font_color = Color(0.203922, 0.184314, 0.180392, 1)
 theme_override_fonts/font = ExtResource("3_f1peg")
 theme_override_font_sizes/font_size = 50
 text = "注册失败
 邮箱格式错误"
 horizontal_alignment = 1
 
-[node name="姓名缺失" type="Label" parent="PopupPanel/PanelContainer/VBoxContainer"]
+[node name="姓名缺失" type="Label" parent="PopupPanelContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_colors/font_color = Color(0.941176, 0.929412, 0.929412, 1)
+theme_override_colors/font_color = Color(0.203922, 0.184314, 0.180392, 1)
 theme_override_fonts/font = ExtResource("3_f1peg")
 theme_override_font_sizes/font_size = 50
 text = "注册失败
 名称不能为空"
 horizontal_alignment = 1
 
-[node name="关闭弹窗" type="Button" parent="PopupPanel/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_fonts/font = ExtResource("3_f1peg")
-theme_override_font_sizes/font_size = 32
-text = "关闭"
+[node name="白色背景板" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 750.0
+offset_bottom = 1334.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hi7tn")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_i6q6c")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -170.0
+offset_right = 735.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+stream = ExtResource("6_uv2el")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_i6q6c")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 96.0
+offset_right = 735.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+stream = ExtResource("7_2fyv2")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer3" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_i6q6c")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 362.0
+offset_right = 735.0
+offset_bottom = 1082.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+stream = ExtResource("8_fjwwb")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer4" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_i6q6c")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 630.0
+offset_right = 735.0
+offset_bottom = 1350.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+stream = ExtResource("9_tcfpj")
+autoplay = true
+loop = true
+
+[node name="VideoStreamPlayer5" type="VideoStreamPlayer" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("CanvasItemMaterial_i6q6c")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = 880.0
+offset_right = 735.0
+offset_bottom = 1600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+stream = ExtResource("10_5jf70")
+autoplay = true
+loop = true
 
 [connection signal="focus_entered" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/VBoxContainer/密码/password" to="." method="_on_password_focus_entered"]
 [connection signal="focus_exited" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/VBoxContainer/密码/password" to="." method="_on_password_focus_exited"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/返回" to="." method="_on_返回_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer/VBoxContainer/HBoxContainer/注册" to="." method="_on_注册_pressed"]
-[connection signal="pressed" from="PopupPanel/PanelContainer/VBoxContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]
+[connection signal="pressed" from="PopupPanelContainer/关闭弹窗" to="." method="_on_关闭弹窗_pressed"]

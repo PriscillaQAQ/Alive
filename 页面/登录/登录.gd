@@ -50,7 +50,6 @@ func on_login_failed(error_code,message):
 	pass
 
 func _on_关闭弹窗_pressed():
-	print(1)
 	emailNode.clear()
 	passwordNode.clear()
 	popupPanel.hide()
