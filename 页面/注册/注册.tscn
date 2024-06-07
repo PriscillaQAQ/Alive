@@ -1,15 +1,15 @@
 [gd_scene load_steps=22 format=3 uid="uid://c0piyoh53xxyj"]
 
 [ext_resource type="Script" path="res://页面/注册/sign_in.gd" id="1_n2wx8"]
-[ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_nu2dq"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_f1peg"]
+[ext_resource type="Texture2D" uid="uid://ck1dkxmgdylh4" path="res://assets/图片/test.png" id="1_nu2dq"]
+[ext_resource type="FontFile" uid="uid://pswudkcv4o0g" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_f1peg"]
 [ext_resource type="StyleBox" uid="uid://tpntdso7nel4" path="res://页面/登录/登录弹窗.tres" id="4_cmq8w"]
-[ext_resource type="Texture2D" uid="uid://3swvdndgomla" path="res://assets/图标/关闭 (1).svg" id="5_ktaqh"]
-[ext_resource type="VideoStream" path="res://assets/视频/1running_jump.ogv" id="6_uv2el"]
-[ext_resource type="VideoStream" path="res://assets/视频/2running_jump.ogv" id="7_2fyv2"]
-[ext_resource type="VideoStream" path="res://assets/视频/3running_jump.ogv" id="8_fjwwb"]
-[ext_resource type="VideoStream" path="res://assets/视频/4running_jump.ogv" id="9_tcfpj"]
-[ext_resource type="VideoStream" path="res://assets/视频/5running_jump.ogv" id="10_5jf70"]
+[ext_resource type="Texture2D" uid="uid://dcd2l1lhnnoxd" path="res://assets/图标/关闭 (1).svg" id="5_ktaqh"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump1.ogv" id="6_uv2el"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump2.ogv" id="7_2fyv2"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump3.ogv" id="8_fjwwb"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump4.ogv" id="9_tcfpj"]
+[ext_resource type="VideoStream" path="res://assets/视频/running_jump5.ogv" id="10_5jf70"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ofra"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)
