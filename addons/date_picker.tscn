@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c5b0yfrghuysc"]
 
 [ext_resource type="PackedScene" uid="uid://dgpqsqi25oj5y" path="res://addons/Calendar/calendar_month.tscn" id="1_g037o"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_lpixx"]
+[ext_resource type="FontFile" uid="uid://d3alw5ufcx7iu" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_lpixx"]
 [ext_resource type="Script" path="res://addons/date_picker.gd" id="2_tl6vb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4twm"]
@@ -9,7 +9,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.976471, 0.929412, 0.898039, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -41,7 +41,7 @@ content_margin_left = 2.0
 content_margin_top = 1.0
 content_margin_right = 2.0
 content_margin_bottom = 1.0
-bg_color = Color(0.94902, 0.960784, 0.976471, 1)
+bg_color = Color(0.976471, 0.929412, 0.898039, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
