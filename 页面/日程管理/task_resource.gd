@@ -10,3 +10,5 @@ class_name Task
 @export var end_time:Array
 @export var description:String
 
+@export var classification:int
+

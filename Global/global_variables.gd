@@ -32,6 +32,28 @@ func time_str_2_date(timeStr:String)->Date:
 func format_date(date:Date)->String:
 	return '%d/%02d/%02d' % [date.year,date.month,date.day]
 	
+#####=========================
+##### 日程相关操作
+####==========================
+func sort_tasks_by_date():
+	tasks.sort_custom(_sort_by_start_time)
+	
+func _sort_by_start_time(task1:Task,task2:Task):
+	if task1.start_time[0].is_before(task2.start_time[0]):
+		return true
+	elif task1.start_time[0].is_after(task2.start_time[0]):
+		return false
+	else:
+		if int(task1.start_time[1]) < int(task2.start_time[1]):
+			return true
+		elif int(task1.start_time[1]) > int(task2.start_time[1]):
+			return false
+		else:
+			if int(task1.start_time[2])<int(task2.start_time[2]):
+				return true
+			else:
+				return false
+	pass
 
 
 #####=========================

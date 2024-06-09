@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://1pjjflpodcti"]
 
 [ext_resource type="Script" path="res://页面/日程管理/single_task.gd" id="1_c2py7"]
-[ext_resource type="FontFile" uid="uid://d3alw5ufcx7iu" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_cdav6"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_cdav6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcsgv"]
 
@@ -60,21 +60,30 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
-[node name="日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="开始日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "5月23日"
+text = "5月23日13:00"
 
-[node name="时间" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="--" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "13:00-17:00"
+text = "—"
+
+[node name="截止日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "5月23日13:00"
 
 [node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -85,6 +94,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0bvch")
 
 [node name="备注" type="Label" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
 theme_override_fonts/font = ExtResource("1_cdav6")

@@ -26,10 +26,6 @@ extends Control
 
 
 
-
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Signalbus.date_selected.connect(_on_date_picked_task)
@@ -64,17 +60,20 @@ func add_task():
 	task.description=routine_note.text
 	# deal detail date
 	var start_hour_text=start_hour.get_item_text(start_hour.selected)
-	var start_min_text=start_hour.get_item_text(start_min.selected)
-	task.start_time=deal_detail_time(start_date.text,start_hour_text,start_hour_text)
+	var start_min_text=start_min.get_item_text(start_min.selected)
+	task.start_time=deal_detail_time(start_date.text,start_hour_text,start_min_text)
 	var end_hour_text=end_hour.get_item_text(end_hour.selected)
-	var end_min_text=end_hour.get_item_text(end_min.selected)
+	var end_min_text=end_min.get_item_text(end_min.selected)
 	task.end_time=deal_detail_time(end_date.text,end_hour_text,end_min_text)
+	# task classification
+	task.classification=GlobalVariables.page_status
 	
 	GlobalVariables.tasks.append(task)
 	show_add_success_msg()
 	
 func deal_detail_time(date:String,hour:String,min:String):
-	var detail_time=[GlobalVariables.time_str_2_date(date),int(hour),int(min)]
+	var detail_time=[GlobalVariables.time_str_2_date(date),hour,min]
+	print(detail_time)
 	return detail_time
 	
 func check_time_setted():
@@ -105,7 +104,7 @@ func check_timesetting_follow_rule():
 		elif int(end_hour.selected)<int(start_hour.selected):
 			return false
 		else:
-			if int(end_min)>=int(start_min):
+			if int(end_min.selected)>=int(start_min.selected):
 				return true
 			else:
 				return false
@@ -146,7 +145,6 @@ func _on_返回_pressed():
 
 	
 func _on_date_picked_task(select_date:Date):
-	print("enter choose")
 	if target==1:
 		routine_ddl.clear()
 		routine_ddl.text=str(select_date.year)+'/'+str(select_date.month)+'/'+str(select_date.day)
