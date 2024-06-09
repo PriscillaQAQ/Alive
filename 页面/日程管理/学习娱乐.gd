@@ -12,7 +12,7 @@ func _ready():
 		_on_学习_focus_entered()
 	elif GlobalVariables.page_status==2:
 		_on_娱乐_focus_entered()
-	GlobalVariables.page_status=0
+	
 
 # @onready var popupPanel=%PopupPanel
 
@@ -31,10 +31,12 @@ func _on_添加日程_pressed():
 
 
 func _on_学习_focus_entered():
+	GlobalVariables.page_status=1
 	studyShowPanel.show()
 
 
 func _on_娱乐_focus_entered():
+	GlobalVariables.page_status=2
 	amusShowPanel.show()
 	
 	
@@ -45,4 +47,10 @@ func _on_返回主页_pressed():
 
 func _on_ddl_pressed():
 	get_tree().change_scene_to_file("res://页面/日程管理/ddl.tscn")
+	pass # Replace with function body.
+
+
+func _on_总日程_focus_entered():
+	GlobalVariables.page_status=0
+	allShowPanel.show()
 	pass # Replace with function body.

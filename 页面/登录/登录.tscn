@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bl7lasws1jqir"]
+[gd_scene load_steps=20 format=3 uid="uid://dvmfrbvdfsccv"]
 
 [ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_76uai"]
 [ext_resource type="Script" path="res://页面/登录/登录.gd" id="1_plsbl"]

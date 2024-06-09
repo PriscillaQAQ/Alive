@@ -31,6 +31,8 @@ func time_str_2_date(timeStr:String)->Date:
 
 func format_date(date:Date)->String:
 	return '%d/%02d/%02d' % [date.year,date.month,date.day]
+	
+
 
 #####=========================
 ##### 成就相关操作

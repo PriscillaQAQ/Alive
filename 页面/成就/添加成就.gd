@@ -66,7 +66,7 @@ func add_achievement():
 	var achievement=Achievement.new()
 	achievement.id=GlobalVariables.uuid_util.v4()
 	achievement.name=prize_name.text
-	achievement.date=deal_str_date(date.text)
+	achievement.date=GlobalVariables.time_str_2_date(date.text)
 	achievement.note=prize_note.text
 	achievement.classification=prize_class.selected
 	GlobalVariables.achievements.append(achievement)
@@ -74,15 +74,7 @@ func add_achievement():
 func save_locally():
 	GlobalVariables.save_achievements(GlobalVariables.achievements_path)
 	pass
-	
-		
-func deal_str_date(date_str:String) -> Date:
-	var date_array=date_str.split('/')
-	var year=int(date_array[0])
-	var month=int(date_array[1])
-	var day=int(date_array[2])
-	var date_date=Date.new(year,month,day)
-	return date_date
+
 
 func show_failure_msg():
 	p_add_failure_msg.show()
