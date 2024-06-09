@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1rl5l3ouxbdi"]
+
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooj60"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+
+[node name="单个ddl" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_d2tq4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "5月23日"
+
+[node name="ddl" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "13:00"
+
+[node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "最多16字显示任务名称"
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ooj60")
+
+[node name="备注" type="Label" parent="VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(428, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
+theme_override_fonts/font = ExtResource("1_2vr0c")
+theme_override_font_sizes/font_size = 25
+text = "备注
+"
+autowrap_mode = 3
+justification_flags = 162

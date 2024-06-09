@@ -1,5 +1,13 @@
 extends Control
 
+@onready var routine_name = %Routine
+@onready var routine_color = %Color
+@onready var routine_ddl = %DDL
+@onready var routine_start_time = %StartTime
+@onready var routine_end_time = %EndTime
+@onready var routine_note = %Note
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

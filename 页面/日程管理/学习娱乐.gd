@@ -41,3 +41,8 @@ func _on_娱乐_focus_entered():
 func _on_返回主页_pressed():
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass # Replace with function body.
+
+
+func _on_ddl_pressed():
+	get_tree().change_scene_to_file("res://页面/日程管理/ddl.tscn")
+	pass # Replace with function body.
