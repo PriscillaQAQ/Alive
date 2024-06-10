@@ -13,12 +13,12 @@ extends Control
 @onready var end_min = %EndMin
 
 @onready var date_picker = %DatePicker
-@onready var popup_panel_container = %PopupPanelContainer
 
-@onready var fail_msg_date = $"PopupPanelContainer/失败日期"
-@onready var fail_msg_name = $"PopupPanelContainer/失败名称"
-@onready var fail_msg_ddl = $"PopupPanelContainer/失败ddl"
-@onready var succeed_msg = $"PopupPanelContainer/添加成功"
+@onready var pop = %"气泡"
+@onready var fail_msg_date = %"失败日期"
+@onready var fail_msg_name =%"失败名称"
+@onready var fail_msg_ddl = %"失败ddl"
+@onready var succeed_msg =%"添加成功"
 
 #let datePicker determine its target
 @onready var target=0
@@ -32,16 +32,17 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_确认_pressed():
+	update_pop()
 	if check_task() and check_time_setted():
 		add_task()
 		save_task_locally()
 		
 		GlobalVariables.save_data_cloud()
-		
+
 		show_add_success_msg()
 		pass
 	else:
-		popup_panel_container.show()
+		pop.show()
 		pass
 	pass # Replace with function body.
 
@@ -118,7 +119,7 @@ func save_task_locally():
 
 func show_add_success_msg():
 	succeed_msg.show()
-	popup_panel_container.show()
+	pop.show()
 
 
 func _on_取消_pressed():
@@ -184,12 +185,13 @@ func _on_end_date_focus_entered():
 	date_picker.show()
 
 
-func _on_关闭弹窗_pressed():
+func update_pop():
 	fail_msg_date.hide()
 	fail_msg_ddl.hide()
 	fail_msg_name.hide()
 	succeed_msg.hide()
-	popup_panel_container.hide()
+	pop.hide()
+
 	pass # Replace with function body.
 
 
