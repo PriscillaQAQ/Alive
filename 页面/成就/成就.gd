@@ -20,6 +20,7 @@ func _on_确认_pressed():
 	pass # Replace with function body.
 	
 func show_achievements():
+	print(GlobalVariables.achievements)
 	for prize in GlobalVariables.achievements:
 		var prize_square_node=prizeNode.instantiate()
 		prize_square_node.prize=prize

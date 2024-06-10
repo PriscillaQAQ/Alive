@@ -47,8 +47,8 @@ func _on_确认_pressed():
 	if check_prize():
 		add_achievement()
 		save_locally()
-		# GlobalVariables.save_data()
-		print(GlobalVariables.achievements)
+		GlobalVariables.save_data_cloud()
+
 		show_success_msg()
 		pass
 	else:

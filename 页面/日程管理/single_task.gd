@@ -20,7 +20,7 @@ func _ready():
 		pass # Replace with function body.
 
 func deal_task_time(detailed_time:Array):
-	var date=detailed_time[0]
+	var date=GlobalVariables.time_str_2_date(detailed_time[0])
 	var date_str=str(date.month)+"月"+str(date.day)+"日"
 	var time_str=detailed_time[1]+":"+detailed_time[2]
 	return date_str+time_str

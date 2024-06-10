@@ -5,8 +5,9 @@ var uuid_util=preload("res://addons/uuid/uuid.gd")
 var life:int
 var mood:int
 var iq:int
-var achievements:Array[Achievement]
-var tasks:Array[Task]
+var money:float
+var achievements:Array
+var tasks:Array
 var page_status:int
 
 var COLLECTION_ID="Alive"
@@ -50,9 +51,11 @@ func sort_tasks_by_ddl():
 	tasks.sort_custom(_sort_by_ddl)
 	
 func _sort_by_start_time(task1:Task,task2:Task):
-	if task1.start_time[0].is_before(task2.start_time[0]):
+	var start_date1=time_str_2_date(task1.start_time[0])
+	var start_date2=time_str_2_date(task2.start_time[0])
+	if start_date1.is_before(start_date2):
 		return true
-	elif task1.start_time[0].is_after(task2.start_time[0]):
+	elif start_date1.is_after(start_date2):
 		return false
 	else:
 		if int(task1.start_time[1]) < int(task2.start_time[1]):
@@ -103,16 +106,8 @@ func save_achievements(achievements_path):
 		var achieve_dict=achievement.achieve_to_dic()
 		# achievement_id作为键，achievements（dic版本）数据作为data
 		achievements_config.set_value("achievements",achievement.id,achieve_dict)
-	print(achievements_config.get_section_keys("achievements"))
-	print("yes")
 	achievements_config.save(achievements_path)
-	check_save()
 
-func check_save():
-	var achieve_config=ConfigFile.new()
-	achieve_config.load(achievements_path)
-	print(achieve_config.get_section_keys("achievements"))
-	print("no")
 	
 func load_achievements(achievements_path):
 	achievements=[]
@@ -125,7 +120,6 @@ func load_achievements(achievements_path):
 		achievements.append(achievement)
 		
 	
-
 #####=========================
 ##### 本地数据文件相关操作
 ####==========================
@@ -164,6 +158,7 @@ func save_player_data(playerData_path: String):
 	player_config.set_value("player", "life", life)
 	player_config.set_value("player", "mood", mood)
 	player_config.set_value("player", "iq", iq)
+	player_config.set_value("player","money",money)
 	player_config.save(playerData_path)
 	
 ##### 读取文件
@@ -178,6 +173,7 @@ func load_player_data(playerData_path:String):
 	life = player_config.get_value("player", "life", 80)
 	mood = player_config.get_value("player", "mood", 80)
 	iq = player_config.get_value("player", "iq", 80)
+	money = player_config.get_value("player","money",0)
 	
 # 切换用户账号时，删除前者的数据
 func clear_user_data(user_id: String):
@@ -210,14 +206,9 @@ func dic_to_task(task_dic:Dictionary) -> Task:
 	# deal Date and time
 	var date_list=task_dic["ddl"]
 	task.ddl=Date.new(date_list[0],date_list[1],date_list[2])
-	task.start_time=detial_time_save_to_apply(task_dic["start_time"])
-	task.end_time=detial_time_save_to_apply(task_dic["end_time"])
+	task.start_time=task_dic["start_time"]
+	task.end_time=task_dic["end_time"]
 	return task
-	
-func detial_time_save_to_apply(detail_time_dic_data:Array):
-	var time_date=Date.new(detail_time_dic_data[0][0],detail_time_dic_data[0][1],detail_time_dic_data[0][2])
-	return [time_date,detail_time_dic_data[1],detail_time_dic_data[2]]
-	
 	
 
 	
@@ -225,22 +216,52 @@ func detial_time_save_to_apply(detail_time_dic_data:Array):
 ##### 云同步相关操作
 ####==========================
 # task 对应存储位置
-
-func save_data():
+func save_data_cloud():
 	var auth=Firebase.Auth.auth
 	if auth.localid:
 		var collection: FirestoreCollection=Firebase.Firestore.collection(COLLECTION_ID)
+		var achievements_dic_array=achievements_to_dic_array()
+		var tasks_dic_array=tasks_to_dic_array()
+		print(tasks_dic_array)
 		# data must be dictionary, objects inside change based on detailed conditions
 		var data:Dictionary={
 			"life": life,
 			"mood": mood,
 			"iq":iq,
-			"achievements":achievements,
-			"tasks":tasks
+			"money":money,
+			"achievements":achievements_dic_array,
+			"tasks":tasks_dic_array
 		}
 		var task:FirestoreTask=collection.update(auth.localid,data)
 		
-func load_data():
+func achievements_to_dic_array():
+	var return_dic_array=[]
+	for each_one in achievements:
+		return_dic_array.append(each_one.achieve_to_dic())
+	return return_dic_array
+func tasks_to_dic_array():
+	var return_dic_array=[]
+	for each_one in tasks:
+		var local_task_dic=each_one.task_to_dic()
+		var task_color=local_task_dic["color"]
+		local_task_dic["color"]=[task_color.r,task_color.b,task_color.g,task_color.a]
+		
+		#var start_date_array=local_task_dic["start_time"][0]
+		#var start_date_date=Date.new(start_date_array[0],start_date_array[1],start_date_array[2])
+		#var start_date_str=format_date(start_date_date)
+		#start_date_array[0]=start_date_str
+		#local_task_dic["start_time"]=start_date_array
+		#
+		#var end_date_array=local_task_dic["end_time"][0]
+		#var end_date_date=Date.new(end_date_array[0],end_date_array[1],end_date_array[2])
+		#var end_date_str=format_date(end_date_date)
+		#end_date_array[0]=end_date_str
+		#local_task_dic["end_time"]=end_date_array
+		
+		return_dic_array.append(local_task_dic)
+	return return_dic_array
+		
+func load_data_cloud():
 	var auth=Firebase.Auth.auth
 	if auth.localid:
 		var collection:FirestoreCollection=Firebase.Firestore.collection(GlobalVariables.COLLECTION_ID)
@@ -249,17 +270,33 @@ func load_data():
 		var document=finished_task.document
 		# 由于新用户doc_fields的值为Nil(空的)
 		if document && document.doc_fields:
-			GlobalVariables.life=document.doc_fields.life
-			GlobalVariables.mood=document.doc_fields.mood
-			GlobalVariables.iq=document.doc_fields.iq
-			GlobalVariables.achievements=document.doc_fields.achivements
-			GlobalVariables.tasks=document.doc_fields.tasks
+			life=document.doc_fields.life
+			mood=document.doc_fields.mood
+			iq=document.doc_fields.iq
+			money=document.doc_fields.money
+			achievements=deal_cloudsave_achievements(document.doc_fields.achievements)
+			tasks=deal_cloudsave_tasks(document.doc_fields.tasks)
 		else:#给默认值，后期再调整
-			GlobalVariables.life=80
-			GlobalVariables.mood=80
-			GlobalVariables.iq=80
-			GlobalVariables.achievements=[]
-			GlobalVariables.tasks=[]
+			life=80
+			mood=80
+			iq=80
+			money=0
+			achievements=[]
+			tasks=[]
+	
+func deal_cloudsave_achievements(cloudsave_dic_array:Array):
+	var return_achievements=[]
+	for each_cloud_dic in cloudsave_dic_array:
+		return_achievements.append(dic_to_achieve(each_cloud_dic))
+	print(return_achievements)
+	return return_achievements
+func deal_cloudsave_tasks(cloudsave_dic_array:Array):
+	var return_tasks=[]
+	for each_cloud_dic in cloudsave_dic_array:
+		var color_list=each_cloud_dic["color"]
+		each_cloud_dic["color"]=Color(color_list[0],color_list[1],color_list[2],color_list[3])
+		return_tasks.append(dic_to_task(each_cloud_dic))
+	return return_tasks
 		
 func load_localid():
 	user_id=Firebase.Auth.auth.localid

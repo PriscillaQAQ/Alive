@@ -37,9 +37,15 @@ func _on_登录_pressed():
 	pass # Replace with function body.
 	
 func on_login_succeeded(auth):
+	# initialization
 	GlobalVariables.load_localid()
 	initial_data_save_path()
-	load_local_data()
+	# clear data from last user
+	clear_past_data()
+	# cloud data to local space
+	GlobalVariables.load_data_cloud()
+	GlobalVariables.save_user_data()
+	# animation
 	close_loading_page()
 	#Firebase.Auth.save_auth(auth)
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
@@ -81,6 +87,17 @@ func initial_data_save_path():
 	
 func load_local_data():
 	GlobalVariables.load_user_data(GlobalVariables.user_id)
+	
+func clear_past_data():
+	clear_config_content(GlobalVariables.player_path)
+	clear_config_content(GlobalVariables.achievements_path)
+	clear_config_content(GlobalVariables.tasks_path)
+	pass
 
+func clear_config_content(config_path):
+	var player_config=ConfigFile.new()
+	player_config.load(config_path)
+	player_config.clear()
+	player_config.save(config_path)
 
 

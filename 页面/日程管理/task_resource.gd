@@ -12,15 +12,15 @@ class_name Task
 
 @export var classification:int
 
-func task_to_dic():
+func task_to_dic() -> Dictionary:
 	var task_dic={
 		"id":id,
 		"name":name,
 		"color":color,
-		"ddl":[ddl.year,ddl.month,ddl.day],
-		"start_time":[[start_time[0].year,start_time[0].month,start_time[0].day],start_time[1],start_time[2]],
-		"end_time":[[end_time[0].year,end_time[0].month,end_time[0].day],end_time[1],end_time[2]],
 		"description":description,
-		"classification":classification
+		"classification":classification,
+		"ddl":[ddl.year,ddl.month,ddl.day],
+		"start_time":start_time,
+		"end_time":end_time
 	}
 	return task_dic

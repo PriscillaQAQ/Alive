@@ -35,6 +35,9 @@ func _on_确认_pressed():
 	if check_task() and check_time_setted():
 		add_task()
 		save_task_locally()
+		
+		GlobalVariables.save_data_cloud()
+		
 		show_add_success_msg()
 		pass
 	else:
@@ -73,8 +76,7 @@ func add_task():
 	show_add_success_msg()
 	
 func deal_detail_time(date:String,hour:String,min:String):
-	var detail_time=[GlobalVariables.time_str_2_date(date),hour,min]
-	print(detail_time)
+	var detail_time=[date,hour,min]
 	return detail_time
 	
 func check_time_setted():
