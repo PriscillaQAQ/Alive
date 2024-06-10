@@ -16,7 +16,15 @@ var player_path : String
 var achievements_path : String
 var tasks_path : String
 
-
+#####=========================
+##### 节点相关操作
+####==========================
+func clear_container(vb_container:VBoxContainer):
+	var child_nodes=vb_container.get_children()
+	for each_child_node in child_nodes:
+		vb_container.remove_child(each_child_node)
+		each_child_node.queue_free()
+	pass
 
 #####=========================
 ##### 日期相关操作
@@ -37,6 +45,9 @@ func format_date(date:Date)->String:
 ####==========================
 func sort_tasks_by_date():
 	tasks.sort_custom(_sort_by_start_time)
+
+func sort_tasks_by_ddl():
+	tasks.sort_custom(_sort_by_ddl)
 	
 func _sort_by_start_time(task1:Task,task2:Task):
 	if task1.start_time[0].is_before(task2.start_time[0]):
@@ -55,6 +66,11 @@ func _sort_by_start_time(task1:Task,task2:Task):
 				return false
 	pass
 
+func _sort_by_ddl(task1:Task,task2:Task):
+	if task1.ddl.is_before(task2.ddl):
+		return true
+	else:
+		return false
 
 #####=========================
 ##### 成就相关操作

@@ -6,6 +6,9 @@ extends Control
 
 @onready var tab_container = %TabContainer
 @onready var v_box_container_0 = %VBoxContainer0
+@onready var v_box_container_1 = %VBoxContainer1
+@onready var v_box_container_2 = %VBoxContainer2
+
 
 
 @onready var singleTaskNode=preload("res://页面/日程管理/single_task.tscn")
@@ -21,16 +24,33 @@ func _ready():
 		studyShowPanel.show()
 	elif GlobalVariables.page_status==2:
 		amusShowPanel.show()
-	
 	show_tasks()
 
 func show_tasks():
 	GlobalVariables.sort_tasks_by_date()
-	for task in GlobalVariables.tasks:
-		var task_node=singleTaskNode.instantiate()
-		task_node.task=task
-		v_box_container_0.add_child(task_node)	
-
+	if GlobalVariables.page_status==0:
+		GlobalVariables.clear_container(v_box_container_0)
+		for task in GlobalVariables.tasks:
+			var task_node=singleTaskNode.instantiate()
+			task_node.task=task
+			v_box_container_0.add_child(task_node)	
+	elif GlobalVariables.page_status==1:
+		GlobalVariables.clear_container(v_box_container_1)
+		for task in GlobalVariables.tasks:
+			if task.classification==1:
+				var task_node=singleTaskNode.instantiate()
+				task_node.task=task
+				v_box_container_1.add_child(task_node)	
+	else:
+		GlobalVariables.clear_container(v_box_container_2)
+		for task in GlobalVariables.tasks:
+			if task.classification==2:
+				var task_node=singleTaskNode.instantiate()
+				task_node.task=task
+				v_box_container_2.add_child(task_node)	
+				
+	
+			
 func _on_说明_pressed() -> void:
 	$AnimationPlayer.play("说明")
 	pass # Replace with function body.
@@ -67,3 +87,5 @@ func change_tab(tab:int):
 			studyShowPanel.show()
 		else:
 			amusShowPanel.show()
+			
+	show_tasks()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1rl5l3ouxbdi"]
+[gd_scene load_steps=5 format=3 uid="uid://d1rl5l3ouxbdi"]
 
 [ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
+[ext_resource type="Script" path="res://页面/日程管理/单个ddl.gd" id="1_3qr6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
 
@@ -10,27 +11,31 @@ content_margin_right = 20.0
 
 [node name="单个ddl" type="PanelContainer"]
 theme_override_styles/panel = SubResource("StyleBoxEmpty_d2tq4")
+script = ExtResource("1_3qr6a")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 20
 
 [node name="日期" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "5月23日"
 
-[node name="ddl" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="分类" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "13:00"
+text = "分类"
 
 [node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -41,6 +46,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ooj60")
 
 [node name="备注" type="Label" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(428, 34)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.23212, 0.23212, 0.23212, 1)
