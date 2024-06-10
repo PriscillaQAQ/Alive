@@ -54,6 +54,7 @@ func check_task():
 
 func add_task():
 	var task=Task.new()
+	task.id=GlobalVariables.uuid_util.v4()
 	task.name=routine_name.text
 	task.color=routine_color.color
 	task.ddl=GlobalVariables.time_str_2_date(routine_ddl.text)
@@ -110,6 +111,7 @@ func check_timesetting_follow_rule():
 				return false
 
 func save_task_locally():
+	GlobalVariables.save_tasks(GlobalVariables.tasks_path)
 	pass
 
 func show_add_success_msg():

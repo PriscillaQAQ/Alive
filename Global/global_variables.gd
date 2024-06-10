@@ -71,6 +71,26 @@ func _sort_by_ddl(task1:Task,task2:Task):
 		return true
 	else:
 		return false
+		
+func save_tasks(tasks_path):
+	var tasks_config:ConfigFile
+	tasks_config=deal_file_exists(tasks_config,tasks_path)
+	tasks_config.clear()
+	for task in tasks:
+		var task_dic=task.task_to_dic()
+		tasks_config.set_value("tasks",task.id,task_dic)
+	tasks_config.save(tasks_path)
+	
+func load_tasks(tasks_path):
+	tasks=[]
+	var tasks_config: ConfigFile
+	tasks_config=deal_file_exists(tasks_config,tasks_path)
+	var keys=tasks_config.get_section_keys("tasks")
+	for task_dic_id in keys:
+		var task_dic=tasks_config.get_value("tasks",task_dic_id)
+		var task=dic_to_task(task_dic)
+		tasks.append(task)
+	pass
 
 #####=========================
 ##### 成就相关操作
@@ -105,11 +125,6 @@ func load_achievements(achievements_path):
 		achievements.append(achievement)
 		
 	
-		
-	
-	
-
-
 
 #####=========================
 ##### 本地数据文件相关操作
@@ -122,10 +137,9 @@ func get_user_data_path(file_name: String) -> String:
 
 # 存储用户的所有数据
 func save_user_data():
-
 	save_player_data(player_path)
 	save_achievements(achievements_path)
-	# save_tasks(tasks_path)
+	save_tasks(tasks_path)
 
 # 检查文件是否存在
 func file_exists(path: String) -> bool:
@@ -156,7 +170,7 @@ func save_player_data(playerData_path: String):
 func load_user_data(user_id: String):
 	load_player_data(player_path)
 	load_achievements(achievements_path)
-	# load_tasks(tasks_path)
+	load_tasks(tasks_path)
 	
 func load_player_data(playerData_path:String):
 	var player_config:ConfigFile
@@ -178,12 +192,33 @@ func clear_user_data(user_id: String):
 func dic_to_achieve(achieve_dic:Dictionary) -> Achievement:
 	var achievement=Achievement.new()
 	achievement.name=achieve_dic["name"]
-	var date_list=achieve_dic["date"]
-	achievement.date=Date.new(date_list[0],date_list[1],date_list[2])
 	achievement.id=achieve_dic["id"]
 	achievement.classification=achieve_dic["classification"]
 	achievement.note=achieve_dic["note"]
+	# deal Date
+	var date_list=achieve_dic["date"]
+	achievement.date=Date.new(date_list[0],date_list[1],date_list[2])
 	return achievement
+	
+func dic_to_task(task_dic:Dictionary) -> Task:
+	var task=Task.new()
+	task.name=task_dic["name"]
+	task.id=task_dic["id"]
+	task.classification=task_dic["classification"]
+	task.description=task_dic["description"]
+	task.color=task_dic["color"]
+	# deal Date and time
+	var date_list=task_dic["ddl"]
+	task.ddl=Date.new(date_list[0],date_list[1],date_list[2])
+	task.start_time=detial_time_save_to_apply(task_dic["start_time"])
+	task.end_time=detial_time_save_to_apply(task_dic["end_time"])
+	return task
+	
+func detial_time_save_to_apply(detail_time_dic_data:Array):
+	var time_date=Date.new(detail_time_dic_data[0][0],detail_time_dic_data[0][1],detail_time_dic_data[0][2])
+	return [time_date,detail_time_dic_data[1],detail_time_dic_data[2]]
+	
+	
 
 	
 #####=========================
