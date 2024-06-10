@@ -8,7 +8,9 @@ var iq:int
 var money:float
 var achievements:Array
 var tasks:Array
+
 var page_status:int
+var update_task:Task
 
 var COLLECTION_ID="Alive"
 var user_id:String

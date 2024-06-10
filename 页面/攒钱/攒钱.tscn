@@ -173,7 +173,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_w86nm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n7h08")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w86nm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eplgq")
-text = "纪 录"
+text = "记 录"
 
 [node name="三条" type="GridContainer" parent="PanelContainer/TextureRect/PanelContainer2/整体/上"]
 layout_mode = 2

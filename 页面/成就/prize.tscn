@@ -36,3 +36,5 @@ theme_override_font_sizes/font_size = 25
 text = "这是什么奖"
 horizontal_alignment = 1
 visible_characters = 5
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]

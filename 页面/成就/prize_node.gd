@@ -22,3 +22,8 @@ func _ready():
 		pass
 	
 	pass # Replace with function body.
+
+func _on_focus_entered():
+	Signalbus.prize_node_selected.emit(prize)
+	get_tree().change_scene_to_file("res://页面/成就/成就详情.tscn")
+	pass # Replace with function body.

@@ -8,6 +8,7 @@ extends PanelContainer
 @onready var task: Task
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if task:
@@ -25,4 +26,8 @@ func deal_task_time(detailed_time:Array):
 	var time_str=detailed_time[1]+":"+detailed_time[2]
 	return date_str+time_str
 
+func _on_编辑_pressed():
+	GlobalVariables.update_task=task
+	get_tree().change_scene_to_file("res://页面/日程管理/日程详情.tscn")
 
+	pass # Replace with function body.

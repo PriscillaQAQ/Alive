@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://1pjjflpodcti"]
 
 [ext_resource type="Script" path="res://页面/日程管理/single_task.gd" id="1_c2py7"]
-[ext_resource type="FontFile" uid="uid://d3alw5ufcx7iu" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_cdav6"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_cdav6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qcsgv"]
 
@@ -141,4 +141,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xf8qo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hxwc7")
 text = "标为完成"
 
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer2/编辑" to="." method="_on_编辑_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer2/完成" to="." method="_on_完成_pressed"]
