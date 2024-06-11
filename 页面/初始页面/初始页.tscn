@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://be1ygqtcusih6"]
 
-[ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_76uai"]
+[ext_resource type="Texture2D" uid="uid://biyw1oq0l4i7n" path="res://assets/图片/test.png" id="1_76uai"]
 [ext_resource type="Script" path="res://页面/初始页面/初始页.gd" id="1_ya8jp"]
-[ext_resource type="FontFile" uid="uid://daro0rpwp1sca" path="res://assets/字体/ADDLG-1.ttf" id="2_iw1hy"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
+[ext_resource type="FontFile" uid="uid://bwuyqcbyy4p24" path="res://assets/字体/ADDLG-1.ttf" id="2_iw1hy"]
+[ext_resource type="FontFile" uid="uid://bymbxfjr8ga0y" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_watk8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ofra"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)
