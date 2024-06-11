@@ -12,6 +12,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	popup_panel.hide()
 	Signalbus.date_selected.connect(_on_pick_date)
 	pass # Replace with function body.
 
@@ -47,8 +48,11 @@ func _on_确认_pressed():
 		add_achievement()
 		save_locally()
 		GlobalVariables.save_data_cloud()
-
+	
 		show_success_msg()
+		
+		GlobalVariables.current_part=2
+		get_tree().change_scene_to_file("res://页面/反馈/反馈.tscn")
 		pass
 	else:
 		show_failure_msg()
@@ -68,6 +72,7 @@ func add_achievement():
 	achievement.note=prize_note.text
 	achievement.classification=prize_class.selected
 	GlobalVariables.achievements.append(achievement)
+	GlobalVariables.update_achievement=achievement
 
 func save_locally():
 	GlobalVariables.save_achievements(GlobalVariables.achievements_path)

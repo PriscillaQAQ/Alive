@@ -29,3 +29,8 @@ func _on_prize_pic_pressed():
 	GlobalVariables.update_achievement=prize
 	get_tree().change_scene_to_file("res://页面/成就/成就详情.tscn")
 	pass # Replace with function body.
+
+
+func _on_prize_name_mouse_entered():
+	prize_name.tooltip_text=prize.name
+	pass # Replace with function body.

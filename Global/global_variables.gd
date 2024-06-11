@@ -12,7 +12,7 @@ var tasks:Array
 var page_status:int		#日程板块区分类别
 var update_task:Task	#修改功能确定对象
 var update_achievement:Achievement		#修改功能确定对象
-var current_part:int
+var current_part:int	#反馈板块来源
 
 var COLLECTION_ID="Alive"
 var user_id:String
