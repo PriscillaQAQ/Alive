@@ -249,3 +249,4 @@ texture_focused = ExtResource("26_h0ipj")
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/学习/学习按钮" to="." method="_on_学习按钮_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/攒钱/攒钱" to="." method="_on_攒钱_pressed"]
 [connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/选择部分/选择/成就/成就" to="." method="_on_成就_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/vbox/设置说明/GridContainer/PanelContainer2/说明" to="." method="_on_说明_pressed"]

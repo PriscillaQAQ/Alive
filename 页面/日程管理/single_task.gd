@@ -31,3 +31,9 @@ func _on_编辑_pressed():
 	get_tree().change_scene_to_file("res://页面/日程管理/日程详情.tscn")
 
 	pass # Replace with function body.
+
+func _on_完成_pressed():
+	GlobalVariables.update_task=task
+	GlobalVariables.current_part=1
+	get_tree().change_scene_to_file("res://页面/反馈/反馈.tscn")
+	pass # Replace with function body.
