@@ -11,6 +11,7 @@ var tasks:Array
 
 var page_status:int
 var update_task:Task
+var update_achievement:Achievement
 
 var COLLECTION_ID="Alive"
 var user_id:String
@@ -247,19 +248,6 @@ func tasks_to_dic_array():
 		var local_task_dic=each_one.task_to_dic()
 		var task_color=local_task_dic["color"]
 		local_task_dic["color"]=[task_color.r,task_color.b,task_color.g,task_color.a]
-		
-		#var start_date_array=local_task_dic["start_time"][0]
-		#var start_date_date=Date.new(start_date_array[0],start_date_array[1],start_date_array[2])
-		#var start_date_str=format_date(start_date_date)
-		#start_date_array[0]=start_date_str
-		#local_task_dic["start_time"]=start_date_array
-		#
-		#var end_date_array=local_task_dic["end_time"][0]
-		#var end_date_date=Date.new(end_date_array[0],end_date_array[1],end_date_array[2])
-		#var end_date_str=format_date(end_date_date)
-		#end_date_array[0]=end_date_str
-		#local_task_dic["end_time"]=end_date_array
-		
 		return_dic_array.append(local_task_dic)
 	return return_dic_array
 		

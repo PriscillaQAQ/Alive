@@ -16,6 +16,7 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [node name="prize_node" type="VBoxContainer"]
+focus_mode = 1
 theme_override_constants/separation = 15
 script = ExtResource("1_iayba")
 
@@ -23,10 +24,13 @@ script = ExtResource("1_iayba")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0uktd")
 
-[node name="prize_pic" type="TextureRect" parent="PanelContainer"]
+[node name="prize_pic" type="TextureButton" parent="PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_dyv0h")
+texture_normal = ExtResource("1_dyv0h")
+texture_pressed = ExtResource("1_dyv0h")
+texture_hover = ExtResource("1_dyv0h")
+texture_focused = ExtResource("1_dyv0h")
 
 [node name="prize_name" type="Label" parent="."]
 unique_name_in_owner = true
@@ -37,4 +41,4 @@ text = "这是什么奖"
 horizontal_alignment = 1
 visible_characters = 5
 
-[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="pressed" from="PanelContainer/prize_pic" to="." method="_on_prize_pic_pressed"]

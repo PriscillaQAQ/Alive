@@ -5,10 +5,9 @@ extends Control
 @onready var prize_class = %"奖杯"
 @onready var prize_note = %"备注"
 
-@onready var popup_panel = %PopupPanel
-@onready var p_add_failure_msg= %"失败"
-@onready var p_add_success_msg = %"成功"
-@onready var close_button = %"关闭弹窗"
+@onready var popup_panel = %"气泡"
+@onready var p_add_failure_msg= %"添加失败"
+@onready var p_add_success_msg = %"添加成功"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -53,7 +52,6 @@ func _on_确认_pressed():
 		pass
 	else:
 		show_failure_msg()
-		print('Error input.')
 	pass # Replace with function body.
 	
 func check_prize():
@@ -85,11 +83,6 @@ func show_success_msg():
 	popup_panel.show()
 	clear_prize_node()
 
-func _on_关闭弹窗_pressed():
-	popup_panel.hide()
-	p_add_failure_msg.hide()
-	p_add_success_msg.hide()
-	pass # Replace with function body.
 	
 	
 func _on_成就名称_focus_entered():

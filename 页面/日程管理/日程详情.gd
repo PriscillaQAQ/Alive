@@ -63,6 +63,9 @@ func ban_edit():
 	end_date.editable=false
 	end_hour.disabled=true
 	end_min.disabled=true
+	
+	var style_box=load("res://页面/日程管理/te只读.tres")
+	task_note.add_theme_stylebox_override("normal",style_box)
 	pass
 
 func allow_change():
@@ -77,6 +80,9 @@ func allow_change():
 	end_date.editable=true
 	end_hour.disabled=false
 	end_min.disabled=false
+	
+	var style_box=load("res://页面/日程管理/te可改.tres")
+	task_note.add_theme_stylebox_override("normal",style_box)
 
 
 func _on_修改_pressed():
@@ -89,6 +95,7 @@ func _on_修改_pressed():
 
 func _on_取消_pressed():
 	origin_show()
+	ban_edit()
 	pass # Replace with function body.
 
 func _on_确认_pressed():

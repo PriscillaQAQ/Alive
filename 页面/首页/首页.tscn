@@ -127,7 +127,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
 [node name="生命条" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条/生命条"]
+[node name="生命条" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/生命条/生命条"]
+unique_name_in_owner = true
 layout_mode = 2
 value = 99.0
 texture_under = ExtResource("2_k2oh6")
@@ -148,7 +149,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
 [node name="心情值" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值/心情值"]
+[node name="心情条" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/心情值/心情值"]
+unique_name_in_owner = true
 layout_mode = 2
 value = 100.0
 texture_under = ExtResource("3_rs4e3")
@@ -169,7 +171,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yl7t8")
 [node name="智力值" type="HBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值"]
 layout_mode = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值/智力值"]
+[node name="智力条" type="TextureProgressBar" parent="PanelContainer/TextureRect/PanelContainer2/vbox/智力值/智力值"]
+unique_name_in_owner = true
 layout_mode = 2
 value = 78.0
 texture_under = ExtResource("7_r24e4")

@@ -22,13 +22,16 @@ extends Control
 
 #let datePicker determine its target
 @onready var target=0
+@onready var origin_color:Color
 
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pop.hide()
 	Signalbus.date_selected.connect(_on_date_picked_task)
+	origin_color=routine_color.color
 	pass # Replace with function body.
 
 func _on_确认_pressed():
@@ -118,8 +121,10 @@ func save_task_locally():
 	pass
 
 func show_add_success_msg():
+	clear_nodes_data()
 	succeed_msg.show()
 	pop.show()
+	
 
 
 func _on_取消_pressed():
@@ -128,7 +133,7 @@ func _on_取消_pressed():
 	
 func clear_nodes_data():
 	routine_name.clear()
-	routine_color.color=Color.hex(0x74706a)
+	routine_color.color=origin_color
 	routine_ddl.clear()
 	routine_note.clear()
 	time_clear()

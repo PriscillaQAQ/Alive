@@ -1,8 +1,10 @@
 extends Control
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("Enter game!")
 	GlobalVariables.page_status=0
 	#GlobalVariables.load_data()
 	pass # Replace with function body.

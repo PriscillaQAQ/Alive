@@ -17,13 +17,15 @@ func _ready():
 			picture=load("res://assets/图标/铜成就120.svg")
 		elif prize.classification==3:
 			picture=load("res://assets/图标/证书120.svg")
-		prize_pic.texture=picture
+		prize_pic.texture_focused=picture
+		prize_pic.texture_hover=picture
+		prize_pic.texture_normal=picture
+		prize_pic.texture_pressed=picture
 	else:
 		pass
 	
-	pass # Replace with function body.
 
-func _on_focus_entered():
-	Signalbus.prize_node_selected.emit(prize)
+func _on_prize_pic_pressed():
+	GlobalVariables.update_achievement=prize
 	get_tree().change_scene_to_file("res://页面/成就/成就详情.tscn")
 	pass # Replace with function body.

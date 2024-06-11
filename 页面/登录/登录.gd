@@ -43,7 +43,8 @@ func on_login_succeeded(auth):
 	# clear data from last user
 	clear_past_data()
 	# cloud data to local space
-	GlobalVariables.load_data_cloud()
+
+	await GlobalVariables.load_data_cloud()
 	GlobalVariables.save_user_data()
 	# animation
 	close_loading_page()
