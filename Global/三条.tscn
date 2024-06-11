@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyc151uh05vph"]
+
+[ext_resource type="Texture2D" uid="uid://diysxj2wimc5c" path="res://assets/图标/爱心框.png" id="1_fa6wx"]
+[ext_resource type="Script" path="res://Global/三条.gd" id="1_pdy1e"]
+[ext_resource type="Texture2D" uid="uid://dtgoput3w2xkg" path="res://assets/图标/爱心.png" id="2_iilfs"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_keck2"]
+[ext_resource type="Texture2D" uid="uid://bydsa0838x84o" path="res://assets/图标/太阳框.png" id="4_q3e7y"]
+[ext_resource type="Texture2D" uid="uid://cichyhigvmkto" path="res://assets/图标/太阳.png" id="5_kq7jl"]
+[ext_resource type="Texture2D" uid="uid://ci2i1oekonho2" path="res://assets/图标/灯泡框.png" id="6_mrh8w"]
+[ext_resource type="Texture2D" uid="uid://cimuq3c7qp05h" path="res://assets/图标/灯泡.png" id="7_gogxs"]
+
+[node name="三条" type="GridContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 18
+columns = 2
+script = ExtResource("1_pdy1e")
+
+[node name="生命条" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+value = 80.0
+texture_under = ExtResource("1_fa6wx")
+texture_progress = ExtResource("2_iilfs")
+
+[node name="生命" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_keck2")
+theme_override_font_sizes/font_size = 38
+text = "生命"
+
+[node name="心情条" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("4_q3e7y")
+texture_progress = ExtResource("5_kq7jl")
+
+[node name="心情" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_keck2")
+theme_override_font_sizes/font_size = 38
+text = "心情"
+
+[node name="智力条" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+value = 78.0
+texture_under = ExtResource("6_mrh8w")
+texture_progress = ExtResource("7_gogxs")
+
+[node name="智力" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.291724, 0.223907, 0.199045, 1)
+theme_override_colors/font_shadow_color = Color(0.290196, 0.223529, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_keck2")
+theme_override_font_sizes/font_size = 38
+text = "智力"
