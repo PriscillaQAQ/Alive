@@ -84,6 +84,7 @@ func initial_data_save_path():
 	GlobalVariables.achievements_path=GlobalVariables.get_user_data_path("achievements.cfg")
 	GlobalVariables.tasks_path=GlobalVariables.get_user_data_path("tasks.cfg")
 	GlobalVariables.player_path=GlobalVariables.get_user_data_path("player.cfg")
+	GlobalVariables.money_records_path=GlobalVariables.get_user_data_path("money_records.cfg")
 	print(GlobalVariables.achievements_path)
 	
 func load_local_data():
@@ -93,6 +94,7 @@ func clear_past_data():
 	clear_config_content(GlobalVariables.player_path)
 	clear_config_content(GlobalVariables.achievements_path)
 	clear_config_content(GlobalVariables.tasks_path)
+	clear_config_content(GlobalVariables.money_records_path)
 	pass
 
 func clear_config_content(config_path):

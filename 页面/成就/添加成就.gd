@@ -79,14 +79,16 @@ func save_locally():
 	pass
 
 
-func show_failure_msg():
-	p_add_failure_msg.show()
-	popup_panel.show()
-	
 func show_success_msg():
+	p_add_failure_msg.hide()
 	p_add_success_msg.show()
 	popup_panel.show()
 	clear_prize_node()
+	
+func show_failure_msg():
+	p_add_success_msg.hide()
+	p_add_failure_msg.show()
+	popup_panel.show()
 
 	
 	

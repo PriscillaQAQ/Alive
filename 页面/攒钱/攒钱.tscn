@@ -1,18 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://xuouvebyyoxf"]
+[gd_scene load_steps=22 format=3 uid="uid://xuouvebyyoxf"]
 
-[ext_resource type="Texture2D" uid="uid://c60ba4os0o8c3" path="res://assets/图片/background2.png" id="1_g7oam"]
-[ext_resource type="Texture2D" uid="uid://duhwnqn31nu3t" path="res://assets/图标/返回60.svg" id="2_c1lv5"]
-[ext_resource type="FontFile" uid="uid://bwuyqcbyy4p24" path="res://assets/字体/ADDLG-1.ttf" id="3_45v8j"]
-[ext_resource type="FontFile" uid="uid://bymbxfjr8ga0y" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_vpxoy"]
+[ext_resource type="Script" path="res://页面/攒钱/攒钱.gd" id="1_44ndm"]
+[ext_resource type="Texture2D" uid="uid://dqneqjpqkvyk2" path="res://assets/图片/background2.png" id="1_g7oam"]
+[ext_resource type="Texture2D" uid="uid://cc8mvhdamdv28" path="res://assets/图标/返回60.svg" id="2_c1lv5"]
+[ext_resource type="FontFile" uid="uid://daro0rpwp1sca" path="res://assets/字体/ADDLG-1.ttf" id="3_45v8j"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_vpxoy"]
 [ext_resource type="PackedScene" uid="uid://dyc151uh05vph" path="res://Global/三条.tscn" id="4_irnrl"]
-[ext_resource type="Texture2D" uid="uid://c66dnmpe4qd8" path="res://assets/图标/首页.svg" id="9_5xjnm"]
-[ext_resource type="Texture2D" uid="uid://bfasskuvn5t3u" path="res://assets/图片/figure1.png" id="9_v8vpq"]
-[ext_resource type="Texture2D" uid="uid://dj8lajj4qgpmw" path="res://assets/图标/首页focus.svg" id="10_astwb"]
-[ext_resource type="Texture2D" uid="uid://moqn330ciqh5" path="res://assets/图片/金币堆堆.png" id="11_67vlv"]
-[ext_resource type="Texture2D" uid="uid://bvq08vcqhmxrt" path="res://assets/图标/设置.svg" id="24_xq61w"]
-[ext_resource type="Texture2D" uid="uid://bb6qdrxmabkyw" path="res://assets/图标/设置focus.svg" id="25_l4mgw"]
-[ext_resource type="Texture2D" uid="uid://2wdnnoxgw480" path="res://assets/图标/说明.svg" id="26_ftmo8"]
-[ext_resource type="Texture2D" uid="uid://dathq42g4g1oh" path="res://assets/图标/说明focus.svg" id="27_um0e4"]
+[ext_resource type="Texture2D" uid="uid://d3umocwn6n1xd" path="res://assets/图标/首页.svg" id="9_5xjnm"]
+[ext_resource type="Texture2D" uid="uid://djc2aw48ekhir" path="res://assets/图片/figure1.png" id="9_v8vpq"]
+[ext_resource type="Texture2D" uid="uid://txjxmp0unsmw" path="res://assets/图标/首页focus.svg" id="10_astwb"]
+[ext_resource type="Texture2D" uid="uid://cqki7q7bcqwrg" path="res://assets/图片/金币堆堆.png" id="11_67vlv"]
+[ext_resource type="Texture2D" uid="uid://dyowkaqrcpvl3" path="res://assets/图标/设置.svg" id="24_xq61w"]
+[ext_resource type="Texture2D" uid="uid://dfo16hqifcg0t" path="res://assets/图标/设置focus.svg" id="25_l4mgw"]
+[ext_resource type="Texture2D" uid="uid://caoc2yt0o5s5v" path="res://assets/图标/说明.svg" id="26_ftmo8"]
+[ext_resource type="Texture2D" uid="uid://dut81oto1hdvi" path="res://assets/图标/说明focus.svg" id="27_um0e4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ayes"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)
@@ -36,8 +37,8 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 2.0
-expand_margin_right = 2.0
+expand_margin_left = 15.0
+expand_margin_right = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7h08"]
 bg_color = Color(0.687532, 0.517587, 0.377374, 1)
@@ -50,8 +51,8 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-expand_margin_left = 2.0
-expand_margin_right = 2.0
+expand_margin_left = 15.0
+expand_margin_right = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eplgq"]
 bg_color = Color(0.911262, 0.807022, 0.72471, 1)
@@ -85,6 +86,7 @@ offset_right = -402.0
 offset_bottom = 686.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_44ndm")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -199,7 +201,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="PanelContainer/TextureRect/PanelContainer2/整体/下/钱数"]
+[node name="money" type="Label" parent="PanelContainer/TextureRect/PanelContainer2/整体/下/钱数"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0.324669, 0.258038, 0.19621, 1)
@@ -207,6 +210,7 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("3_45v8j")
 theme_override_font_sizes/font_size = 70
 text = "2222"
+visible_characters = 4
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/TextureRect/PanelContainer2/整体/下/钱数"]
 layout_mode = 2
@@ -238,3 +242,7 @@ texture_focused = ExtResource("27_um0e4")
 position = Vector2(510, 982)
 scale = Vector2(0.3275, 0.3275)
 texture = ExtResource("9_v8vpq")
+
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/整体/上/VBoxContainer/设置/返回" to="." method="_on_返回_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/整体/上/VBoxContainer/添加+纪录/添加" to="." method="_on_添加_pressed"]
+[connection signal="pressed" from="PanelContainer/TextureRect/PanelContainer2/整体/上/VBoxContainer/添加+纪录/纪录" to="." method="_on_纪录_pressed"]

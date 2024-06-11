@@ -11,8 +11,13 @@ extends Control
 @onready var value_list=[10,5,0,-5,-10]
 @onready var times_list=[1.1,1.05,1,1.05,1.1]
 
+@onready var fail_msg = %"添加失败"
+@onready var fail_pop = %PopupPanelContainer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	fail_pop.hide()
 	if GlobalVariables.current_part==1:
 		show_routine_relevant()
 	elif GlobalVariables.current_part==2:
@@ -34,6 +39,7 @@ func show_achieve_relevant():
 func show_money_relevant():
 	pass
 	part_name.text="存储"
+	detail_name.text=str(GlobalVariables.update_money_record.money)
 	pass
 	
 
@@ -78,11 +84,24 @@ func _on_确认_pressed():
 		GlobalVariables.save_player_data(GlobalVariables.player_path)
 		return_relevant_page()
 	else:
+		fail_pop.show()
 		pass
 	
 func check_choice():
 	if whole.selected != -1 and eff_iq.selected != -1 and eff_mood.selected != -1 and eff_life.selected != -1:
 		return true
+	elif whole.selected == -1:
+		fail_msg.text="请评价任务\n总体完成情况"
+	elif eff_iq.selected == -1:
+		fail_msg.text="请评价对\n生命的影响"
+	elif eff_mood.selected != -1:
+		fail_msg.text="请评价对\n心情的影响"
 	else:
-		return false
+		fail_msg.text="请评价对\n智力的影响"
+	return false
 	pass
+
+
+func _on_关闭弹窗_pressed():
+	fail_pop.hide()
+	pass # Replace with function body.

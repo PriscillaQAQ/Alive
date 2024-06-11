@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkdd41ldr4oty"]
 
-[ext_resource type="Texture2D" uid="uid://ccoqnqprapex8" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
+[ext_resource type="Texture2D" uid="uid://cjqyomvyc82xy" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
 [ext_resource type="Script" path="res://页面/成就/prize_node.gd" id="1_iayba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uktd"]

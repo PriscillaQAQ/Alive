@@ -8,10 +8,12 @@ var iq:int
 var money:float
 var achievements:Array
 var tasks:Array
+var money_records:Array
 
 var page_status:int		#日程板块区分类别
 var update_task:Task	#修改功能确定对象
 var update_achievement:Achievement		#修改功能确定对象
+var update_money_record:Money
 var current_part:int	#反馈板块来源
 
 var COLLECTION_ID="Alive"
@@ -19,6 +21,7 @@ var user_id:String
 var player_path : String
 var achievements_path : String
 var tasks_path : String
+var money_records_path:String
 
 #####=========================
 ##### 节点相关操作
@@ -124,6 +127,36 @@ func load_achievements(achievements_path):
 		
 	
 #####=========================
+##### 攒钱相关操作
+####==========================
+func sort_records_by_date_after():
+	money_records.sort_custom(_sort_by_date)
+func _sort_by_date(money1:Money,money2:Money):
+	if money1.date.is_after(money2.date):
+		return true
+	else:
+		return false
+func save_money_records(money_records_path):
+	var money_records_config:ConfigFile
+	money_records_config=deal_file_exists(money_records_config,money_records_path)
+	money_records_config.clear()
+	for money_record in money_records:
+		var money_record_dic=money_record.money_record_to_dic()
+		money_records_config.set_value("money_records",money_record.id,money_record_dic)
+	money_records_config.save(money_records_path)
+
+	
+func load_money_records(money_records_path):
+	money_records=[]
+	var money_records_config:ConfigFile
+	money_records_config=deal_file_exists(money_records_config,money_records_path)
+	var keys=money_records_config.get_section_keys("money_records")
+	for money_record_dic_id in keys:
+		var money_record_dic=money_records_config.get_value("money_records",money_record_dic_id)
+		var money_record=dic_to_money_record(money_record_dic)
+		money_records.append(money_record)
+	pass
+#####=========================
 ##### 本地数据文件相关操作
 ####==========================
 
@@ -137,6 +170,7 @@ func save_user_data():
 	save_player_data(player_path)
 	save_achievements(achievements_path)
 	save_tasks(tasks_path)
+	save_money_records(money_records_path)
 
 # 检查文件是否存在
 func file_exists(path: String) -> bool:
@@ -169,6 +203,7 @@ func load_user_data(user_id: String):
 	load_player_data(player_path)
 	load_achievements(achievements_path)
 	load_tasks(tasks_path)
+	load_money_records(money_records_path)
 	
 func load_player_data(playerData_path:String):
 	var player_config:ConfigFile
@@ -213,6 +248,17 @@ func dic_to_task(task_dic:Dictionary) -> Task:
 	task.end_time=task_dic["end_time"]
 	return task
 	
+func dic_to_money_record(money_record_dic:Dictionary) -> Money:
+	var money_record=Money.new()
+	money_record.id=money_record_dic["id"]
+	money_record.note=money_record_dic["note"]
+	money_record.money=money_record_dic["money"]
+	
+	var date_list=money_record_dic["date"]
+	money_record.date=Date.new(date_list[0],date_list[1],date_list[2])
+	return money_record
+	pass
+
 
 	
 #####=========================
@@ -225,7 +271,7 @@ func save_data_cloud():
 		var collection: FirestoreCollection=Firebase.Firestore.collection(COLLECTION_ID)
 		var achievements_dic_array=achievements_to_dic_array()
 		var tasks_dic_array=tasks_to_dic_array()
-		print(tasks_dic_array)
+		var money_records_dic_array=money_records_to_dic_array()
 		# data must be dictionary, objects inside change based on detailed conditions
 		var data:Dictionary={
 			"life": life,
@@ -233,7 +279,8 @@ func save_data_cloud():
 			"iq":iq,
 			"money":money,
 			"achievements":achievements_dic_array,
-			"tasks":tasks_dic_array
+			"tasks":tasks_dic_array,
+			"money_records":money_records_dic_array
 		}
 		var task:FirestoreTask=collection.update(auth.localid,data)
 		
@@ -249,6 +296,11 @@ func tasks_to_dic_array():
 		var task_color=local_task_dic["color"]
 		local_task_dic["color"]=[task_color.r,task_color.b,task_color.g,task_color.a]
 		return_dic_array.append(local_task_dic)
+	return return_dic_array
+func money_records_to_dic_array():
+	var return_dic_array=[]
+	for each_one in money_records:
+		return_dic_array.append(each_one.money_record_to_dic())
 	return return_dic_array
 		
 func load_data_cloud():
@@ -266,6 +318,8 @@ func load_data_cloud():
 			money=document.doc_fields.money
 			achievements=deal_cloudsave_achievements(document.doc_fields.achievements)
 			tasks=deal_cloudsave_tasks(document.doc_fields.tasks)
+			money_records=deal_cloudsave_money_records(document.doc_fields.money_records)
+			
 		else:#给默认值，后期再调整
 			life=80
 			mood=80
@@ -273,12 +327,12 @@ func load_data_cloud():
 			money=0
 			achievements=[]
 			tasks=[]
+			money_records=[]
 	
 func deal_cloudsave_achievements(cloudsave_dic_array:Array):
 	var return_achievements=[]
 	for each_cloud_dic in cloudsave_dic_array:
 		return_achievements.append(dic_to_achieve(each_cloud_dic))
-	print(return_achievements)
 	return return_achievements
 func deal_cloudsave_tasks(cloudsave_dic_array:Array):
 	var return_tasks=[]
@@ -287,6 +341,13 @@ func deal_cloudsave_tasks(cloudsave_dic_array:Array):
 		each_cloud_dic["color"]=Color(color_list[0],color_list[1],color_list[2],color_list[3])
 		return_tasks.append(dic_to_task(each_cloud_dic))
 	return return_tasks
+func deal_cloudsave_money_records(cloudsave_dic_array:Array):
+	var return_money_records=[]
+	for each_cloud_dic in cloudsave_dic_array:
+		return_money_records.append(dic_to_money_record(each_cloud_dic))
+	return return_money_records
+	
+	pass
 		
 func load_localid():
 	user_id=Firebase.Auth.auth.localid
