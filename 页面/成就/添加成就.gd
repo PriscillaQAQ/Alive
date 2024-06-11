@@ -8,6 +8,8 @@ extends Control
 @onready var popup_panel = %"气泡"
 @onready var p_add_failure_msg= %"添加失败"
 @onready var p_add_success_msg = %"添加成功"
+@onready var loading_msg = %"加载中"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -44,6 +46,7 @@ func _on_取消_pressed():
 	pass # Replace with function body.
 	
 func _on_确认_pressed():
+	show_loading_msg()
 	if check_prize():
 		add_achievement()
 		save_locally()
@@ -78,15 +81,22 @@ func save_locally():
 	GlobalVariables.save_achievements(GlobalVariables.achievements_path)
 	pass
 
+func show_loading_msg():
+	p_add_failure_msg.hide()
+	p_add_success_msg.hide()
+	loading_msg.show()
+	popup_panel.show()
 
 func show_success_msg():
 	p_add_failure_msg.hide()
+	loading_msg.hide()
 	p_add_success_msg.show()
 	popup_panel.show()
 	clear_prize_node()
 	
 func show_failure_msg():
 	p_add_success_msg.hide()
+	loading_msg.hide()
 	p_add_failure_msg.show()
 	popup_panel.show()
 

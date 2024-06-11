@@ -20,7 +20,7 @@ extends Control
 @onready var fail_msg_date = %"失败日期"
 @onready var fail_msg_name = %"失败名称"
 @onready var fail_msg_ddl = %"失败ddl"
-@onready var succeed_msg = %"添加成功"
+@onready var succeed_msg = %"修改成功"
 @onready var popup_panel_container = %PopupPanelContainer
 
 @onready var task:Task
