@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1rl5l3ouxbdi"]
 
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
+[ext_resource type="FontFile" uid="uid://bymbxfjr8ga0y" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
 [ext_resource type="Script" path="res://页面/日程管理/单个ddl.gd" id="1_3qr6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
