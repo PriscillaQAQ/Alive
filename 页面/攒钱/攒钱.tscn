@@ -75,6 +75,10 @@ border_width_right = 35
 border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpvix"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 bg_color = Color(0.983615, 0.974081, 0.96563, 1)
 
 [node name="Control" type="Control"]
@@ -193,7 +197,11 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.109804, 0.109804, 0.109804, 1)
 theme_override_font_sizes/normal_font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_lpvix")
-text = "这里随机文案~"
+text = "今天家里的水果吃光了，打算给“赛博小人”买点水果，你会选择：
+A.苹果 3r
+B.香蕉 5r
+C.橘子 6r
+D.草莓 8r"
 
 [node name="钱数" type="VBoxContainer" parent="PanelContainer/TextureRect/PanelContainer2/整体/下"]
 layout_mode = 2
