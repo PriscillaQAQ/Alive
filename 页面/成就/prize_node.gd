@@ -9,6 +9,8 @@ extends VBoxContainer
 func _ready():
 	if prize:
 		prize_name.text=prize.name
+		prize_name.tooltip_text=prize.name
+		prize_name.mouse_filter=0
 		if prize.classification==0:
 			picture=load("res://assets/图标/金成就120.svg")
 		elif prize.classification==1:
@@ -31,6 +33,3 @@ func _on_prize_pic_pressed():
 	pass # Replace with function body.
 
 
-func _on_prize_name_mouse_entered():
-	prize_name.tooltip_text=prize.name
-	pass # Replace with function body.
