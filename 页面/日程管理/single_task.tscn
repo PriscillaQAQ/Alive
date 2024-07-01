@@ -52,6 +52,7 @@ expand_margin_left = 2.0
 expand_margin_right = 2.0
 
 [node name="SingleTask" type="PanelContainer"]
+custom_minimum_size = Vector2(620, 116)
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qcsgv")
 script = ExtResource("1_c2py7")
 
@@ -84,10 +85,14 @@ text = "5月23日13:00"
 
 [node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 36)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "信息系统分析与设计"
+text = "系统系统系统"
+text_overrun_behavior = 3
+max_lines_visible = 1
+visible_characters_behavior = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

@@ -32,6 +32,13 @@ func clear_container(vb_container:VBoxContainer):
 		vb_container.remove_child(each_child_node)
 		each_child_node.queue_free()
 	pass
+	
+func clear_grid_container(g_container:GridContainer):
+	var child_nodes=g_container.get_children()
+	for each_child_node in child_nodes:
+		g_container.remove_child(each_child_node)
+		each_child_node.queue_free()
+	pass
 
 #####=========================
 ##### 日期相关操作
@@ -125,7 +132,16 @@ func load_achievements(achievements_path):
 		var achievement=dic_to_achieve(achieve_dic)
 		achievements.append(achievement)
 		
+
+func sort_achievements_by_date():
+	achievements.sort_custom(_sort_by_date_asc)
+func _sort_by_date_asc(achieve1:Achievement,achieve2:Achievement):
+	if achieve1.date.is_before(achieve2.date):
+		return true
+	else:
+		return false
 	
+		
 #####=========================
 ##### 攒钱相关操作
 ####==========================

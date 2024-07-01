@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1rl5l3ouxbdi"]
 
-[ext_resource type="FontFile" uid="uid://bymbxfjr8ga0y" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
+[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
 [ext_resource type="Script" path="res://页面/日程管理/单个ddl.gd" id="1_3qr6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
@@ -36,10 +36,19 @@ text = "分类"
 
 [node name="任务名" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(325, 2.08165e-12)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "最多16字显示任务名称"
+text = "最多十三字显示任务名称任务"
+text_overrun_behavior = 3
+
+[node name="紧急提示" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.490193, 0.422859, 1)
+theme_override_font_sizes/font_size = 25
+text = "急！！！"
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

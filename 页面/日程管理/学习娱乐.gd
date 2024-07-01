@@ -34,6 +34,9 @@ func show_tasks():
 			var task_node=singleTaskNode.instantiate()
 			task_node.task=task
 			v_box_container_0.add_child(task_node)	
+			if task != GlobalVariables.tasks[-1]:
+				v_box_container_0.add_child(create_line())
+				
 	elif GlobalVariables.page_status==1:
 		GlobalVariables.clear_container(v_box_container_1)
 		for task in GlobalVariables.tasks:
@@ -41,6 +44,9 @@ func show_tasks():
 				var task_node=singleTaskNode.instantiate()
 				task_node.task=task
 				v_box_container_1.add_child(task_node)	
+				#if task != GlobalVariables.tasks[-1]:
+					#v_box_container_1.add_child(create_line())
+				
 	else:
 		GlobalVariables.clear_container(v_box_container_2)
 		for task in GlobalVariables.tasks:
@@ -48,12 +54,22 @@ func show_tasks():
 				var task_node=singleTaskNode.instantiate()
 				task_node.task=task
 				v_box_container_2.add_child(task_node)	
+				#if task != GlobalVariables.tasks[-1]:
+					#v_box_container_2.add_child(create_line())
 				
 	
 			
 func _on_说明_pressed() -> void:
-	$AnimationPlayer.play("说明")
+	get_tree().change_scene_to_file("res://页面/设置/说明三条.tscn")
 	pass # Replace with function body.
+
+func create_line():
+	var h_line=HSeparator.new()
+	var new_stylebox=StyleBoxLine.new()
+	new_stylebox.thickness=2
+	new_stylebox.color=Color.hex(0x73614b99)
+	h_line.add_theme_stylebox_override("Separator",new_stylebox)
+	return h_line
 
 
 func _on_关闭_pressed() -> void:
