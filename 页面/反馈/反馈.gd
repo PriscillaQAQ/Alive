@@ -55,7 +55,7 @@ func back_to_origin():
 	eff_iq=-1
 	
 func _on_返回_pressed():
-	back_to_origin
+	back_to_origin()
 	return_relevant_page()
 	pass # Replace with function body.
 
@@ -104,4 +104,10 @@ func check_choice():
 
 func _on_关闭弹窗_pressed():
 	fail_pop.hide()
+	pass # Replace with function body.
+
+
+func _on_不反馈_pressed():
+	back_to_origin()
+	return_relevant_page()
 	pass # Replace with function body.
