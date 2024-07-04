@@ -9,6 +9,7 @@ extends Control
 @onready var v_box_container_1 = %VBoxContainer1
 @onready var v_box_container_2 = %VBoxContainer2
 
+@onready var figure_1 = %Figure1
 
 
 @onready var singleTaskNode=preload("res://页面/日程管理/single_task.tscn")
@@ -18,6 +19,8 @@ extends Control
 
 
 func _ready():
+	GlobalVariables.set_figure(figure_1)
+	GlobalVariables.current_place=1
 	tab_container.current_tab=GlobalVariables.page_status
 	tab_container.tab_changed.connect(change_tab)
 	if GlobalVariables.page_status==1:

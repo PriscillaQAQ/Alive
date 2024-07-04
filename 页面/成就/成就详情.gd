@@ -16,6 +16,8 @@ extends Control
 
 @onready var date_picker = %DatePicker
 
+@onready var music = %music
+
 @onready var picture
 
 @onready var prize:Achievement
@@ -25,6 +27,7 @@ extends Control
 func _ready():
 	Signalbus.date_selected.connect(_on_date_picked_task)
 	prize=GlobalVariables.update_achievement
+	GlobalVariables.play_music(music)
 	show_origin_achievement_detail()
 	ban_edit()
 	pass # Replace with function body.

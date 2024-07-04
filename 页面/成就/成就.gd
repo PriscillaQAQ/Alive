@@ -9,6 +9,7 @@ var showing_achievements=[]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVariables.current_place=3
 	show_achievements()
 	var popup_menu_class=limit_class_btn.get_popup()
 	var popup_menu_date=order_date_btn.get_popup()

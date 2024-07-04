@@ -23,6 +23,7 @@ extends Control
 #let datePicker determine its target
 @onready var target=0
 @onready var origin_color:Color
+@onready var texture_rect = %TextureRect
 
 
 
@@ -32,6 +33,7 @@ func _ready():
 	pop.hide()
 	Signalbus.date_selected.connect(_on_date_picked_task)
 	origin_color=routine_color.color
+	GlobalVariables.set_figure_ogv(texture_rect,"右Dance")
 	pass # Replace with function body.
 
 func _on_确认_pressed():

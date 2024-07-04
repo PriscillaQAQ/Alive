@@ -247,6 +247,7 @@ texture_normal = ExtResource("26_ftmo8")
 texture_focused = ExtResource("27_um0e4")
 
 [node name="Figure1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/整体"]
+unique_name_in_owner = true
 position = Vector2(510, 982)
 scale = Vector2(0.3275, 0.3275)
 texture = ExtResource("9_v8vpq")

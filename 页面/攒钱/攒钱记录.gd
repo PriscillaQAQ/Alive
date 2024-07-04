@@ -3,8 +3,13 @@ extends Control
 @onready var v_box_container = %VBoxContainer
 @onready var money_record_node=preload("res://页面/攒钱/single_record_money.tscn")
 
+@onready var texture_rect_2 = %TextureRect2
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVariables.current_place=4
+	GlobalVariables.set_figure_ogv(texture_rect_2,"joyful_jump")
 	show_records()
 	pass # Replace with function body.
 

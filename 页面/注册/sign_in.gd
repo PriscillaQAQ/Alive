@@ -37,8 +37,6 @@ func _on_注册_pressed():
 	var password=passwordNode.text
 	if not check_alias(alias):
 		return
-	print(email)
-	print(password)
 	Firebase.Auth.signup_with_email_and_password(email,password)
 	pass # Replace with function body.
 
@@ -58,6 +56,7 @@ func _on_返回_pressed():
 	
 func on_signup_succeeded(auth):
 	close_loading_page()
+	GlobalVariables.alias=aliasNode.text
 	sign_succeed_msg.show()
 	popupPanel.show()
 	print(auth)
@@ -65,6 +64,10 @@ func on_signup_succeeded(auth):
 
 func on_signup_failed(error_code,message):
 	close_loading_page()
+	
+	print(error_code)
+	print(message)
+	
 	var email=emailNode.text
 	var password=passwordNode.text
 	if password.length()<6:

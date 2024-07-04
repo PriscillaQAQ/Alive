@@ -10,12 +10,16 @@ extends Control
 @onready var p_add_failure_msg = %"添加失败"
 @onready var p_add_success_msg = %"添加成功"
 
+@onready var texture_rect_2 = %TextureRect2
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	popup_panel.hide()
 	Signalbus.date_selected.connect(_on_pick_date)
+	GlobalVariables.set_figure_ogv(texture_rect_2,"joyful_jump")
 	pass # Replace with function body.
 
 

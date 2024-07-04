@@ -1,9 +1,13 @@
 extends Control
 
+
+@onready var figure_1 = %Figure1
 @onready var v_box_container = %VBoxContainer
 @onready var single_ddl_node=preload("res://页面/日程管理/单个ddl.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVariables.current_place=2
+	GlobalVariables.set_figure(figure_1)
 	show_ddl()
 	pass # Replace with function body.
 

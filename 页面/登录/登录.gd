@@ -49,6 +49,7 @@ func on_login_succeeded(auth):
 	# animation
 	close_loading_page()
 	#Firebase.Auth.save_auth(auth)
+	MusicManager.set_music()
 	get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass
 

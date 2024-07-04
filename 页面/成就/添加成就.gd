@@ -10,12 +10,14 @@ extends Control
 @onready var p_add_success_msg = %"添加成功"
 @onready var loading_msg = %"加载中"
 
+@onready var texture_rect = %TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	popup_panel.hide()
 	Signalbus.date_selected.connect(_on_pick_date)
+	GlobalVariables.set_figure_ogv(texture_rect,"joyful_jump")
 	pass # Replace with function body.
 
 
@@ -113,6 +115,5 @@ func _on_奖杯_button_up():
 func _on_备注_focus_entered():
 	datePcker.hide()
 	pass # Replace with function body.
-
-
+	
 

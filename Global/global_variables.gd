@@ -2,6 +2,7 @@ extends Node
 
 var uuid_util=preload("res://addons/uuid/uuid.gd")
 
+var alias:String
 var life:int
 var mood:int
 var iq:int
@@ -10,11 +11,16 @@ var achievements:Array
 var tasks:Array
 var money_records:Array
 
+#这三啥都还没做
+var figure:int
+var music:int
+
 var page_status:int		#日程板块区分类别
 var update_task:Task	#修改功能确定对象
 var update_achievement:Achievement		#修改功能确定对象
 var update_money_record:Money
 var current_part:int	#反馈板块来源
+var current_place:int
 
 var COLLECTION_ID="Alive"
 var user_id:String
@@ -22,6 +28,28 @@ var player_path : String
 var achievements_path : String
 var tasks_path : String
 var money_records_path:String
+
+
+#####=========================
+##### 偏好相关操作
+####==========================
+func play_music(ASP:AudioStreamPlayer):
+	var m_file_name=str(GlobalVariables.music)+".mp3"
+	ASP.stream=load("res://assets/音乐/"+m_file_name)
+	ASP.play()
+	
+func set_figure(S2D:Sprite2D):
+	var file_pic_name="figure"+str(GlobalVariables.figure)+'.png'
+	var fig_picture=load("res://assets/图片/"+file_pic_name)
+	S2D.texture=fig_picture
+
+func set_figure_ogv(VSP:VideoStreamPlayer,action:String):
+	var videoname=action+str(GlobalVariables.figure)+".ogv"
+	var fig_video=load("res://assets/视频/"+videoname)
+	VSP.stream=fig_video
+	VSP.loop=true
+	VSP.play()
+	
 
 #####=========================
 ##### 节点相关操作
@@ -208,10 +236,14 @@ func save_player_data(playerData_path: String):
 	var player_config:ConfigFile
 	player_config=deal_file_exists(player_config,playerData_path)
 	player_config.clear()
+	player_config.set_value("player","alias",alias)
 	player_config.set_value("player", "life", life)
 	player_config.set_value("player", "mood", mood)
 	player_config.set_value("player", "iq", iq)
 	player_config.set_value("player","money",money)
+	
+	player_config.set_value("player", "music", music)
+	player_config.set_value("player","figure",figure)
 	player_config.save(playerData_path)
 	
 ##### 读取文件
@@ -228,6 +260,10 @@ func load_player_data(playerData_path:String):
 	mood = player_config.get_value("player", "mood", 80)
 	iq = player_config.get_value("player", "iq", 80)
 	money = player_config.get_value("player","money",0)
+	alias=player_config.get_value("player","alias","")
+	
+	music = player_config.get_value("player", "music", 1)
+	figure = player_config.get_value("player","figure",1)
 	
 # 切换用户账号时，删除前者的数据
 func clear_user_data(user_id: String):
@@ -290,10 +326,13 @@ func save_data_cloud():
 		var money_records_dic_array=money_records_to_dic_array()
 		# data must be dictionary, objects inside change based on detailed conditions
 		var data:Dictionary={
+			"alias":alias,
 			"life": life,
 			"mood": mood,
 			"iq":iq,
 			"money":money,
+			"music":music,
+			"figure":figure,
 			"achievements":achievements_dic_array,
 			"tasks":tasks_dic_array,
 			"money_records":money_records_dic_array
@@ -328,19 +367,25 @@ func load_data_cloud():
 		var document=finished_task.document
 		# 由于新用户doc_fields的值为Nil(空的)
 		if document && document.doc_fields:
+			alias=document.doc_fields.alias
 			life=document.doc_fields.life
 			mood=document.doc_fields.mood
 			iq=document.doc_fields.iq
 			money=document.doc_fields.money
+			music=document.doc_fields.music
+			figure=document.doc_fields.figure
 			achievements=deal_cloudsave_achievements(document.doc_fields.achievements)
 			tasks=deal_cloudsave_tasks(document.doc_fields.tasks)
 			money_records=deal_cloudsave_money_records(document.doc_fields.money_records)
 			
 		else:#给默认值，后期再调整
+			alias=''
 			life=80
 			mood=80
 			iq=80
 			money=0
+			music=1
+			figure=1
 			achievements=[]
 			tasks=[]
 			money_records=[]

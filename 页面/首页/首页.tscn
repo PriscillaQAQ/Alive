@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://cj4br3f7jmobq"]
+[gd_scene load_steps=31 format=3 uid="uid://cj4br3f7jmobq"]
 
 [ext_resource type="Script" path="res://页面/首页/首页.gd" id="1_xddyb"]
-[ext_resource type="VideoStream" path="res://assets/视频/shoot_gun-1.ogv" id="2_1x1vj"]
 [ext_resource type="PackedScene" uid="uid://dyc151uh05vph" path="res://Global/三条.tscn" id="3_75pk8"]
 [ext_resource type="Texture2D" uid="uid://dhc4cys1pre6y" path="res://assets/图标/木马normal.svg" id="10_8f3gm"]
 [ext_resource type="Texture2D" uid="uid://dlmvrdpm2bn8h" path="res://assets/图标/木马hover.svg" id="11_2vwse"]
@@ -93,8 +92,8 @@ offset_bottom = 1334.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6ayes")
 
 [node name="TextureRect" type="VideoStreamPlayer" parent="PanelContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-stream = ExtResource("2_1x1vj")
 autoplay = true
 loop = true
 

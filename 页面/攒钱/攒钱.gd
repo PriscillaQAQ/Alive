@@ -1,11 +1,14 @@
 extends Control
 
 @onready var money = %money
+@onready var figure_1 = %Figure1
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVariables.current_place=5
+	GlobalVariables.set_figure(figure_1)
 	if GlobalVariables.money<=9999:
 		money.text=str(GlobalVariables.money)
 	else:

@@ -17,6 +17,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalVariables.current_place=6
 	fail_pop.hide()
 	if GlobalVariables.current_part==1:
 		show_routine_relevant()
