@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://diysxj2wimc5c" path="res://assets/图标/爱心框.png" id="1_fa6wx"]
 [ext_resource type="Script" path="res://Global/三条.gd" id="1_pdy1e"]
 [ext_resource type="Texture2D" uid="uid://dtgoput3w2xkg" path="res://assets/图标/爱心.png" id="2_iilfs"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_keck2"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="3_keck2"]
 [ext_resource type="Texture2D" uid="uid://bydsa0838x84o" path="res://assets/图标/太阳框.png" id="4_q3e7y"]
 [ext_resource type="Texture2D" uid="uid://cichyhigvmkto" path="res://assets/图标/太阳.png" id="5_kq7jl"]
 [ext_resource type="Texture2D" uid="uid://ci2i1oekonho2" path="res://assets/图标/灯泡框.png" id="6_mrh8w"]

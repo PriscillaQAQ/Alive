@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqneqjpqkvyk2" path="res://assets/图片/background2.png" id="1_g7oam"]
 [ext_resource type="Texture2D" uid="uid://cc8mvhdamdv28" path="res://assets/图标/返回60.svg" id="2_c1lv5"]
 [ext_resource type="FontFile" uid="uid://daro0rpwp1sca" path="res://assets/字体/ADDLG-1.ttf" id="3_45v8j"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_vpxoy"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="3_vpxoy"]
 [ext_resource type="PackedScene" uid="uid://dyc151uh05vph" path="res://Global/三条.tscn" id="4_irnrl"]
 [ext_resource type="Texture2D" uid="uid://d3umocwn6n1xd" path="res://assets/图标/首页.svg" id="9_5xjnm"]
 [ext_resource type="Texture2D" uid="uid://djc2aw48ekhir" path="res://assets/图片/figure1.png" id="9_v8vpq"]

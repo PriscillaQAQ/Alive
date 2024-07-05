@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnduer8cuo48r"]
 
 [ext_resource type="Script" path="res://页面/攒钱/single_record_money.gd" id="1_mhqd0"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_xny23"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="1_xny23"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
 content_margin_left = 15.0

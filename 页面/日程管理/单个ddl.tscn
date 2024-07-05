@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1rl5l3ouxbdi"]
+[gd_scene load_steps=6 format=3 uid="uid://d1rl5l3ouxbdi"]
 
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="1_2vr0c"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="1_2vr0c"]
 [ext_resource type="Script" path="res://页面/日程管理/单个ddl.gd" id="1_3qr6a"]
+[ext_resource type="Texture2D" uid="uid://dxexo5es7237x" path="res://assets/图标/感叹号1.svg" id="2_1lekg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2tq4"]
 
@@ -43,12 +44,12 @@ theme_override_font_sizes/font_size = 25
 text = "最多十三字显示任务名称任务"
 text_overrun_behavior = 3
 
-[node name="紧急提示" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="紧急提示" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(36, 2.08165e-12)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.490193, 0.422859, 1)
-theme_override_font_sizes/font_size = 25
-text = "急！！！"
+texture = ExtResource("2_1lekg")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

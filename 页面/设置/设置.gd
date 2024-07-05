@@ -2,15 +2,20 @@ extends Control
 
 @onready var option_button = %OptionButton
 @onready var figure_option_button = %FigureOptionButton
+@onready var fail_msg = %"修改失败"
+@onready var success_msg = %"修改成功"
+@onready var fail_reason = %"原因"
+
+
 
 @onready var aliasNode = %"用户名"
 @onready var new_password_node = %"新密码"
-
 
 @onready var music = %music
 @onready var figure_1 = %Figure1
 
 @onready var fig_picture
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -52,14 +57,25 @@ func _on_确认_pressed():
 		#云端存储
 		GlobalVariables.save_player_data(GlobalVariables.player_path)
 		GlobalVariables.save_data_cloud()
+		show_success_msg()
 	else:
+		show_fail_msg()
 		pass
+		
+func show_success_msg():
+	fail_msg.hide()
+	success_msg.show()
+func show_fail_msg():
+	success_msg.hide()
+	fail_msg.show()
+	
 
 	
 func check_reasonable():
 	if aliasNode.text != "":
 		return true
 	else:
+		fail_reason.text="昵称不得为空"
 		return false
 	pass
 	
@@ -76,6 +92,7 @@ func check_password():
 		pass
 		
 func show_error():
+	fail_reason.text="密码应大于六位"
 	pass
 	
 

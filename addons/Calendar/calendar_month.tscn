@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgpqsqi25oj5y"]
 
 [ext_resource type="Script" path="res://addons/Calendar/calendar_month.gd" id="1_fw5sv"]
-[ext_resource type="FontFile" uid="uid://d3alw5ufcx7iu" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_a2m3l"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="2_a2m3l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4klsd"]
 bg_color = Color(0.97778, 0.928245, 0.898055, 1)

@@ -6,6 +6,7 @@ extends PanelContainer
 @onready var task_note = %"备注"
 @onready var emergent_tip = %"紧急提示"
 
+
 @onready var task:Task
 
 
@@ -44,22 +45,27 @@ func check_emergent():
 	if (third_emergent.is_equal(task.ddl) or third_emergent.is_after(task.ddl)) and Date.today().is_before(task.ddl):
 		if most_emergent.is_equal(task.ddl):
 			print(1)
-			emergent_tip.add_theme_color_override("font_color",Color.hex(0xff000099))
+			show_emergent("1")
 		if second_emergent.is_equal(task.ddl):
 			print(2)
-			emergent_tip.add_theme_color_override("font_color",Color.hex(0xff493999))
+			show_emergent("2")
 		if third_emergent.is_equal(task.ddl):
 			print(3)
-			emergent_tip.add_theme_color_override("font_color",Color.hex(0xff7d6c99))
-		emergent_tip.show()
+			show_emergent("3")
 	
 	if Date.today().is_equal(task.ddl):
 		ddl.add_theme_color_override("font_color",Color.hex(0xff000099))
 		task_name.add_theme_color_override("font_color",Color.hex(0xff000099))
-		emergent_tip.add_theme_color_override("font_color",Color.hex(0xff000099))
-		emergent_tip.show()
+		show_emergent("1")
 		classification.add_theme_color_override("font_color",Color.hex(0xff000099))
 		task_note.add_theme_color_override("font_color",Color.hex(0xff000099))
+		
+func show_emergent(degree:String):
+	var file_name="res://assets/图标/感叹号"
+	var clue_pic=load(file_name+degree+".svg")
+	emergent_tip.texture=clue_pic
+	emergent_tip.show()
+	pass
 		
 		
 	

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqyomvyc82xy" path="res://assets/图标/金成就120.svg" id="1_dyv0h"]
 [ext_resource type="Script" path="res://页面/成就/prize_node.gd" id="1_iayba"]
 [ext_resource type="StyleBox" uid="uid://dtxvy5d31f2wl" path="res://页面/成就/panel.tres" id="3_qxhgy"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="4_48vtg"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="4_48vtg"]
 
 [sub_resource type="Image" id="Image_qyxs7"]
 data = {

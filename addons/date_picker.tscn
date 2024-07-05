@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c5b0yfrghuysc"]
 
 [ext_resource type="PackedScene" uid="uid://dgpqsqi25oj5y" path="res://addons/Calendar/calendar_month.tscn" id="1_g037o"]
-[ext_resource type="FontFile" uid="uid://d3alw5ufcx7iu" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="2_lpixx"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="2_lpixx"]
 [ext_resource type="Script" path="res://addons/date_picker.gd" id="2_tl6vb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4twm"]

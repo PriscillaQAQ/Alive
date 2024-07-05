@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://页面/注册/sign_in.gd" id="1_n2wx8"]
 [ext_resource type="Texture2D" uid="uid://cl1u0r7vecvec" path="res://assets/图片/test.png" id="1_nu2dq"]
-[ext_resource type="FontFile" uid="uid://blrj8prp033mp" path="res://assets/字体/AaCaoKeSongMianBaoYuan-2.ttf" id="3_f1peg"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="3_f1peg"]
 [ext_resource type="StyleBox" uid="uid://tpntdso7nel4" path="res://页面/登录/登录弹窗.tres" id="4_cmq8w"]
 [ext_resource type="Texture2D" uid="uid://3swvdndgomla" path="res://assets/图标/关闭 (1).svg" id="5_ktaqh"]
 [ext_resource type="VideoStream" path="res://assets/视频/running_jump1.ogv" id="6_uv2el"]
