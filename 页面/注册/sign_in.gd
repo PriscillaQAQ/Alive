@@ -55,11 +55,12 @@ func _on_返回_pressed():
 	pass # Replace with function body.
 	
 func on_signup_succeeded(auth):
-	close_loading_page()
+	originate_account()
 	GlobalVariables.alias=aliasNode.text
 	sign_succeed_msg.show()
 	popupPanel.show()
-	print(auth)
+	GlobalVariables.save_data_cloud()
+	close_loading_page()
 	pass
 
 func on_signup_failed(error_code,message):
@@ -109,3 +110,16 @@ func close_loading_page():
 	video_stream_player_3.hide()
 	video_stream_player_4.hide()
 	video_stream_player_5.hide()
+	
+func originate_account():
+	GlobalVariables.alias=""
+	GlobalVariables.life=80
+	GlobalVariables.mood=80
+	GlobalVariables.iq=80
+	GlobalVariables.money=0
+	GlobalVariables.music=1
+	GlobalVariables.figure=1
+	GlobalVariables.achievements=[]
+	GlobalVariables.tasks=[]
+	GlobalVariables.money_records=[]
+	pass

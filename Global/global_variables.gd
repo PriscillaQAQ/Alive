@@ -20,7 +20,7 @@ var update_task:Task	#修改功能确定对象
 var update_achievement:Achievement		#修改功能确定对象
 var update_money_record:Money
 var current_part:int	#反馈板块来源
-var current_place:int
+var current_place:int	#用于说明和设置的返回按钮
 
 var COLLECTION_ID="Alive"
 var user_id:String
