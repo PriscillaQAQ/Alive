@@ -52,20 +52,38 @@ func check_emergent():
 		if third_emergent.is_equal(task.ddl):
 			print(3)
 			show_emergent("3")
+			
+	if Date.today().is_after(task.ddl):
+		set_special_ddl(Color.hex(0x9f9f9fff))
+		show_emergent("0")
 	
 	if Date.today().is_equal(task.ddl):
-		ddl.add_theme_color_override("font_color",Color.hex(0xff000099))
-		task_name.add_theme_color_override("font_color",Color.hex(0xff000099))
+		set_special_ddl(Color.hex(0xff0000ff))
 		show_emergent("1")
-		classification.add_theme_color_override("font_color",Color.hex(0xff000099))
-		task_note.add_theme_color_override("font_color",Color.hex(0xff000099))
 		
+func set_special_ddl(sp_color:Color):
+	ddl.add_theme_color_override("font_color",sp_color)
+	task_name.add_theme_color_override("font_color",sp_color)
+	classification.add_theme_color_override("font_color",sp_color)
+	task_note.add_theme_color_override("font_color",sp_color)
+	
 func show_emergent(degree:String):
 	var file_name="res://assets/图标/感叹号"
 	var clue_pic=load(file_name+degree+".svg")
 	emergent_tip.texture=clue_pic
+	set_emergent_tip_text(degree)
 	emergent_tip.show()
 	pass
+	
+func set_emergent_tip_text(degree:String):
+	if degree=="1":
+		emergent_tip.tooltip_text="期限将至orz"
+	elif degree=="2":
+		emergent_tip.tooltip_text="！！还有两天！！"
+	elif degree=="3":
+		emergent_tip.tooltip_text="！还有三天！"
+	elif degree=="0":
+		emergent_tip.tooltip_text="ddl已过T^T"
 		
 		
 	

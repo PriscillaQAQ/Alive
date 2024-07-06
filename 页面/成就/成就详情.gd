@@ -114,8 +114,9 @@ func update_achievement():
 	changed_achievement.note=prize_note.text
 	changed_achievement.id=prize.id
 	
-	GlobalVariables.achievements.append(changed_achievement)
-	GlobalVariables.achievements.erase(prize)
+	#GlobalVariables.achievements.append(changed_achievement)
+	#GlobalVariables.achievements.erase(prize)
+	GlobalVariables.achievements[GlobalVariables.achievements.find(prize)]=changed_achievement
 	pass
 
 func show_add_success_msg():
