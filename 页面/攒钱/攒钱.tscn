@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://xuouvebyyoxf"]
+[gd_scene load_steps=20 format=3 uid="uid://xuouvebyyoxf"]
 
 [ext_resource type="Script" path="res://页面/攒钱/攒钱.gd" id="1_44ndm"]
 [ext_resource type="Texture2D" uid="uid://dqneqjpqkvyk2" path="res://assets/图片/background2.png" id="1_g7oam"]
@@ -9,11 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d3umocwn6n1xd" path="res://assets/图标/首页.svg" id="9_5xjnm"]
 [ext_resource type="Texture2D" uid="uid://djc2aw48ekhir" path="res://assets/图片/figure1.png" id="9_v8vpq"]
 [ext_resource type="Texture2D" uid="uid://txjxmp0unsmw" path="res://assets/图标/首页focus.svg" id="10_astwb"]
+[ext_resource type="PackedScene" uid="uid://c1ou3hv8sputr" path="res://Global/设置.tscn" id="10_dug4a"]
 [ext_resource type="Texture2D" uid="uid://cqki7q7bcqwrg" path="res://assets/图片/金币堆堆.png" id="11_67vlv"]
-[ext_resource type="Texture2D" uid="uid://dyowkaqrcpvl3" path="res://assets/图标/设置.svg" id="24_xq61w"]
-[ext_resource type="Texture2D" uid="uid://dfo16hqifcg0t" path="res://assets/图标/设置focus.svg" id="25_l4mgw"]
-[ext_resource type="Texture2D" uid="uid://caoc2yt0o5s5v" path="res://assets/图标/说明.svg" id="26_ftmo8"]
-[ext_resource type="Texture2D" uid="uid://dut81oto1hdvi" path="res://assets/图标/说明focus.svg" id="27_um0e4"]
+[ext_resource type="PackedScene" uid="uid://c4moeu1nfaich" path="res://Global/说明.tscn" id="11_jupnx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ayes"]
 bg_color = Color(0.866667, 0.815686, 0.756863, 1)
@@ -236,15 +234,11 @@ layout_mode = 2
 texture_normal = ExtResource("9_5xjnm")
 texture_focused = ExtResource("10_astwb")
 
-[node name="设置" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/整体/功能键"]
+[node name="设置" parent="PanelContainer/TextureRect/PanelContainer2/整体/功能键" instance=ExtResource("10_dug4a")]
 layout_mode = 2
-texture_normal = ExtResource("24_xq61w")
-texture_focused = ExtResource("25_l4mgw")
 
-[node name="说明" type="TextureButton" parent="PanelContainer/TextureRect/PanelContainer2/整体/功能键"]
+[node name="说明" parent="PanelContainer/TextureRect/PanelContainer2/整体/功能键" instance=ExtResource("11_jupnx")]
 layout_mode = 2
-texture_normal = ExtResource("26_ftmo8")
-texture_focused = ExtResource("27_um0e4")
 
 [node name="Figure1" type="Sprite2D" parent="PanelContainer/TextureRect/PanelContainer2/整体"]
 unique_name_in_owner = true

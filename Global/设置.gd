@@ -8,5 +8,6 @@ func _ready():
 
 
 func _on_pressed():
+	print(GlobalVariables.current_place)
 	get_tree().change_scene_to_file("res://页面/设置/设置.tscn")
 	pass # Replace with function body.

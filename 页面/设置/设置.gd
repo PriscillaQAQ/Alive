@@ -102,6 +102,7 @@ func _on_figure_option_button_item_selected(index):
 	figure_1.texture=fig_picture
 	
 func return_to_last_place():
+	print(GlobalVariables.current_place)
 	if GlobalVariables.current_place==0:
 		get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	elif GlobalVariables.current_place==1:
