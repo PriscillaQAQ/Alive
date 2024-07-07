@@ -89,3 +89,9 @@ func show_failure_msg():
 	p_add_failure_msg.show()
 	popup_panel.show()
 	
+
+
+func _on_返回_pressed():
+	clear_node_data()
+	get_tree().change_scene_to_file("res://页面/攒钱/攒钱.tscn")
+	pass # Replace with function body.
