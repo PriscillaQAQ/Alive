@@ -5,7 +5,6 @@ extends Control
 @onready var password_rule=%rule
 @onready var aliasNode=%"输入用户名"
 
-
 @onready var popupPanel=%PopupPanelContainer
 @onready var sign_succeed_msg = %"成功"
 @onready var sign_fail_cuz_pw_msg = %"密码失败"
@@ -19,16 +18,10 @@ extends Control
 @onready var video_stream_player_4 = %VideoStreamPlayer4
 @onready var video_stream_player_5 = %VideoStreamPlayer5
 
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-
 	Firebase.Auth.signup_succeeded.connect(on_signup_succeeded)
 	Firebase.Auth.signup_failed.connect(on_signup_failed)
 	
-	pass # Replace with function body.
-
 
 func _on_注册_pressed():
 	show_loading_page()
@@ -38,7 +31,7 @@ func _on_注册_pressed():
 	if not check_alias(alias):
 		return
 	Firebase.Auth.signup_with_email_and_password(email,password)
-	pass # Replace with function body.
+
 
 func check_alias(alias):
 	if alias=='':
@@ -52,7 +45,7 @@ func _on_返回_pressed():
 	emailNode.clear()
 	passwordNode.clear()
 	get_tree().change_scene_to_file("res://页面/初始页面/初始页.tscn")
-	pass # Replace with function body.
+
 	
 func on_signup_succeeded(auth):
 	originate_account()
@@ -61,7 +54,7 @@ func on_signup_succeeded(auth):
 	popupPanel.show()
 	GlobalVariables.save_data_cloud()
 	close_loading_page()
-	pass
+
 
 func on_signup_failed(error_code,message):
 	close_loading_page()
@@ -76,16 +69,15 @@ func on_signup_failed(error_code,message):
 	else:
 		sign_fail_cuz_em_msg.show()
 	popupPanel.show()
-	pass
+
 
 func _on_password_focus_entered():
 	password_rule.show()
-	pass # Replace with function body.
 
 
 func _on_password_focus_exited():
 	password_rule.hide()
-	pass # Replace with function body.
+	
 
 func _on_关闭弹窗_pressed():
 	sign_succeed_msg.hide()
@@ -122,4 +114,3 @@ func originate_account():
 	GlobalVariables.achievements=[]
 	GlobalVariables.tasks=[]
 	GlobalVariables.money_records=[]
-	pass

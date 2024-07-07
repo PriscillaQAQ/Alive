@@ -77,11 +77,11 @@ func show_emergent(degree:String):
 	
 func set_emergent_tip_text(degree:String):
 	if degree=="1":
-		emergent_tip.tooltip_text="期限将至orz"
+		emergent_tip.tooltip_text="期限将至(;´༎ຶД༎ຶ`)"
 	elif degree=="2":
-		emergent_tip.tooltip_text="！！还有两天！！"
+		emergent_tip.tooltip_text="还有两天orz"
 	elif degree=="3":
-		emergent_tip.tooltip_text="！还有三天！"
+		emergent_tip.tooltip_text="还有三天∑(ﾟДﾟ)"
 	elif degree=="0":
 		emergent_tip.tooltip_text="ddl已过T^T"
 		

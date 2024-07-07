@@ -367,6 +367,7 @@ func load_data_cloud():
 		var document=finished_task.document
 		# 由于新用户doc_fields的值为Nil(空的)
 		if document && document.doc_fields:
+			print(1)
 			alias=document.doc_fields.alias
 			life=document.doc_fields.life
 			mood=document.doc_fields.mood
@@ -379,6 +380,7 @@ func load_data_cloud():
 			money_records=deal_cloudsave_money_records(document.doc_fields.money_records)
 			
 		else:#给默认值，后期再调整
+			print(0)
 			alias=''
 			life=80
 			mood=80
@@ -389,6 +391,9 @@ func load_data_cloud():
 			achievements=[]
 			tasks=[]
 			money_records=[]
+		print(GlobalVariables.life)
+		print(GlobalVariables.mood)
+		print(GlobalVariables.iq)
 	
 func deal_cloudsave_achievements(cloudsave_dic_array:Array):
 	var return_achievements=[]
