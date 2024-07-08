@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1lom0dvqrnjk"]
+
+[ext_resource type="Texture2D" uid="uid://df15d1lslada1" path="res://assets/图标/chahao.svg" id="1_gvsfj"]
+[ext_resource type="Theme" uid="uid://b18ckstqr3iqk" path="res://页面/成就/default.tres" id="1_ur7nn"]
+[ext_resource type="Texture2D" uid="uid://dfgep26s47ewx" path="res://assets/图标/chahao_pressed.svg" id="2_jbmpu"]
+[ext_resource type="Script" path="res://页面/成就/relatedfile_comp.gd" id="2_y8dm0"]
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="3_16rri"]
+[ext_resource type="Texture2D" uid="uid://byierjhjf341d" path="res://assets/图标/chahao_hover.svg" id="3_126yt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qext"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwjig"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0.0666667, 0.341176, 0.25098, 0.301961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxrbd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0.291724, 0.223907, 0.199045, 1)
+
+[node name="relatedfileComp" type="HBoxContainer"]
+size_flags_horizontal = 3
+theme = ExtResource("1_ur7nn")
+theme_override_constants/separation = 20
+alignment = 2
+script = ExtResource("2_y8dm0")
+
+[node name="file_button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.466667, 0.376471, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_colors/font_hover_color = Color(0.454902, 0.439216, 0.415686, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.290196, 0.337255, 1)
+theme_override_fonts/font = ExtResource("3_16rri")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8qext")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uwjig")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fxrbd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fxrbd")
+text = "README.md"
+alignment = 0
+
+[node name="del_button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("1_gvsfj")
+texture_pressed = ExtResource("2_jbmpu")
+texture_hover = ExtResource("3_126yt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="file_button" to="." method="_on_file_button_pressed"]
+[connection signal="pressed" from="del_button" to="." method="_on_del_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnduer8cuo48r"]
+[gd_scene load_steps=5 format=3 uid="uid://bnduer8cuo48r"]
 
 [ext_resource type="Script" path="res://页面/攒钱/single_record_money.gd" id="1_mhqd0"]
 [ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="1_xny23"]
@@ -8,48 +8,6 @@ content_margin_left = 15.0
 content_margin_top = 5.0
 content_margin_right = 15.0
 content_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6ap"]
-bg_color = Color(0.508958, 0.369671, 0.253557, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd8js"]
-bg_color = Color(0.687532, 0.517587, 0.377374, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 2.0
-expand_margin_right = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kho3s"]
-bg_color = Color(0.974622, 0.943553, 0.919447, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 2.0
-expand_margin_right = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooj60"]
 content_margin_left = 20.0
@@ -86,23 +44,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "金额"
-
-[node name="编辑" type="Button" parent="VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.905769, 0.905769, 0.905769, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_xny23")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_uu6ap")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nd8js")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_uu6ap")
-theme_override_styles/normal = SubResource("StyleBoxFlat_kho3s")
-text = "编辑"
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

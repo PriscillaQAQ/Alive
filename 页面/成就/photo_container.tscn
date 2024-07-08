@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgulqy468b8ae"]
+
+[ext_resource type="FontFile" uid="uid://b27ec6vtaxc28" path="res://assets/字体/1.ttf" id="1_sppxj"]
+[ext_resource type="Script" path="res://页面/成就/photo_container.gd" id="1_tfeyq"]
+[ext_resource type="Texture2D" uid="uid://4i2jexiyevri" path="res://assets/图标/link.svg" id="2_k25b3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7upno"]
+
+[node name="PhotoContainer" type="VBoxContainer"]
+script = ExtResource("1_tfeyq")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.466667, 0.376471, 0.282353, 1)
+theme_override_fonts/font = ExtResource("1_sppxj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_7upno")
+text = "点击选择本地图片(仅1张)"
+icon = ExtResource("2_k25b3")
+alignment = 0
+
+[node name="PhotoFileDialog" type="FileDialog" parent="Button"]
+unique_name_in_owner = true
+title = "Open a File"
+size = Vector2i(295, 158)
+ok_button_text = "打开"
+file_mode = 0
+filters = PackedStringArray("*.png, *.jpg, *.jpeg")
+use_native_dialog = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="file_selected" from="Button/PhotoFileDialog" to="." method="_on_photo_file_dialog_file_selected"]

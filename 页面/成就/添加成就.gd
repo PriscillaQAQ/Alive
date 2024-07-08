@@ -12,6 +12,12 @@ extends Control
 
 @onready var texture_rect = %TextureRect
 
+@onready var photo_container = %PhotoContainer
+@onready var photo_file_comp_scene = preload("res://页面/成就/relatedfile_comp.tscn")
+
+var photo_data
+var photo_name
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,6 +48,11 @@ func clear_prize_node():
 	prize_note.clear()
 	prize_class.selected=-1
 	date.clear()
+	photo_data={}
+	
+	var children=photo_container.get_children()
+	children[-1].queue_free()
+	photo_container.button.disabled=false
 	
 func _on_取消_pressed():
 	clear_prize_node()
@@ -53,9 +64,7 @@ func _on_确认_pressed():
 		add_achievement()
 		save_locally()
 		GlobalVariables.save_data_cloud()
-	
 		show_success_msg()
-		
 		GlobalVariables.current_part=2
 		get_tree().change_scene_to_file("res://页面/反馈/反馈.tscn")
 		pass
@@ -76,6 +85,7 @@ func add_achievement():
 	achievement.date=GlobalVariables.time_str_2_date(date.text)
 	achievement.note=prize_note.text
 	achievement.classification=prize_class.selected
+	achievement.photo=photo_container.photo_data
 	GlobalVariables.achievements.append(achievement)
 	GlobalVariables.update_achievement=achievement
 
@@ -116,4 +126,6 @@ func _on_备注_focus_entered():
 	datePcker.hide()
 	pass # Replace with function body.
 	
+
+
 

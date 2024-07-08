@@ -15,19 +15,20 @@ extends Control
 @onready var succeed_msg = %"添加成功"
 
 @onready var date_picker = %DatePicker
+@onready var photo_container = %PhotoContainer
 
-@onready var music = %music
 
 @onready var picture
 
 @onready var prize:Achievement
+
+@onready var photo_file_comp_scene = preload("res://页面/成就/relatedfile_comp.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Signalbus.date_selected.connect(_on_date_picked_task)
 	prize=GlobalVariables.update_achievement
-	GlobalVariables.play_music(music)
 	show_origin_achievement_detail()
 	ban_edit()
 	pass # Replace with function body.
@@ -46,6 +47,8 @@ func show_origin_achievement_detail():
 	elif prize.classification==3:
 		picture=load("res://assets/图标/证书120.svg")
 	prize_pic.texture=picture
+	photo_container.current_prize=prize
+	photo_container.load_pic()
 	
 	determine_btn.hide()
 	cancel_btn.hide()
@@ -57,6 +60,7 @@ func ban_edit():
 	prize_note.editable=false
 	prize_date.editable=false
 	prize_class.disabled=true
+	photo_container.button.disabled=true
 	
 	var style_box=load("res://页面/成就/te只读.tres")
 	prize_note.add_theme_stylebox_override("normal",style_box)
@@ -64,6 +68,7 @@ func ban_edit():
 	cancel_btn.hide()
 	determine_btn.hide()
 	change_btn.show()
+	Signalbus.allow_change.emit(true)
 	pass
 
 func allow_change():
@@ -71,6 +76,7 @@ func allow_change():
 	prize_note.editable=true
 	prize_date.editable=true
 	prize_class.disabled=false
+	Signalbus.allow_change.emit(false)
 	
 	var style_box=load("res://页面/成就/te可改.tres")
 	prize_note.add_theme_stylebox_override("normal",style_box)
@@ -113,6 +119,7 @@ func update_achievement():
 	changed_achievement.date=GlobalVariables.time_str_2_date(prize_date.text)
 	changed_achievement.note=prize_note.text
 	changed_achievement.id=prize.id
+	changed_achievement.photo=photo_container.photo_data
 	
 	#GlobalVariables.achievements.append(changed_achievement)
 	#GlobalVariables.achievements.erase(prize)
@@ -125,6 +132,8 @@ func show_add_success_msg():
 	ban_edit()
 	
 func _on_取消_pressed():
+	if photo_container.get_child_count()>1:
+		photo_container.get_children()[-1].queue_free()
 	show_origin_achievement_detail()
 	ban_edit()
 	pass # Replace with function body.

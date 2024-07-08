@@ -281,6 +281,7 @@ func dic_to_achieve(achieve_dic:Dictionary) -> Achievement:
 	achievement.id=achieve_dic["id"]
 	achievement.classification=achieve_dic["classification"]
 	achievement.note=achieve_dic["note"]
+	achievement.photo={"name":achieve_dic["photo_name"],"data":achieve_dic["photo_data"]}
 	# deal Date
 	var date_list=achieve_dic["date"]
 	achievement.date=Date.new(date_list[0],date_list[1],date_list[2])
