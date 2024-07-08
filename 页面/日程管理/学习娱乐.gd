@@ -39,7 +39,6 @@ func show_tasks():
 			v_box_container_0.add_child(task_node)	
 			if task != GlobalVariables.tasks[-1]:
 				v_box_container_0.add_child(create_line())
-				
 	elif GlobalVariables.page_status==1:
 		GlobalVariables.clear_container(v_box_container_1)
 		for task in GlobalVariables.tasks:
@@ -49,7 +48,6 @@ func show_tasks():
 				v_box_container_1.add_child(task_node)	
 				#if task != GlobalVariables.tasks[-1]:
 					#v_box_container_1.add_child(create_line())
-				
 	else:
 		GlobalVariables.clear_container(v_box_container_2)
 		for task in GlobalVariables.tasks:

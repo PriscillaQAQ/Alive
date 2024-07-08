@@ -26,7 +26,6 @@ func _ready():
 	GlobalVariables.set_figure_ogv(texture_rect,"joyful_jump")
 	pass # Replace with function body.
 
-
 func _on_日期_focus_entered():
 	datePcker.show()
 	pass # Replace with function body.
@@ -51,11 +50,13 @@ func clear_prize_node():
 	photo_data={}
 	
 	var children=photo_container.get_children()
-	children[-1].queue_free()
+	if photo_container.get_child_count()>1:	
+		children[-1].queue_free()
 	photo_container.button.disabled=false
 	
 func _on_取消_pressed():
 	clear_prize_node()
+	
 	pass # Replace with function body.
 	
 func _on_确认_pressed():
@@ -70,7 +71,6 @@ func _on_确认_pressed():
 		pass
 	else:
 		show_failure_msg()
-	pass # Replace with function body.
 	
 func check_prize():
 	if prize_name.text!="" and prize_class.selected !=-1 and date.text!='':

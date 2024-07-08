@@ -32,7 +32,6 @@ func _ready():
 	origin_show()
 	ban_edit()
 	
-	pass # Replace with function body.
 func origin_show():
 	task_date.text=GlobalVariables.format_date(task.ddl)
 	task_name.text=task.name
@@ -49,8 +48,7 @@ func origin_show():
 	determine_btn.hide()
 	cancel_btn.hide()
 	change_btn.show()
-	pass
-	
+
 func ban_edit():
 	task_name.editable=false
 	task_note.editable=false
@@ -66,7 +64,6 @@ func ban_edit():
 	
 	var style_box=load("res://页面/日程管理/te只读.tres")
 	task_note.add_theme_stylebox_override("normal",style_box)
-	pass
 
 func allow_change():
 	task_name.editable=true

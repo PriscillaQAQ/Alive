@@ -43,8 +43,8 @@ func _on_成就_pressed():
 func _on_说明_pressed():
 	get_tree().change_scene_to_file("res://页面/设置/说明三条.tscn")
 	pass # Replace with function body.
-
-
+	
+	
 func _on_设置_pressed():
 	#MusicManager.pause_music()
 	get_tree().change_scene_to_file("res://页面/设置/设置.tscn")

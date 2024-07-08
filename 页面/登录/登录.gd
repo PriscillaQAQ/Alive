@@ -13,8 +13,6 @@ extends Control
 @onready var video_stream_player_4 = $VideoStreamPlayer4
 @onready var video_stream_player_5 = $VideoStreamPlayer5
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
@@ -23,7 +21,6 @@ func _ready():
 	#if Firebase.Auth.check_auth_file():
 		#get_tree().change_scene_to_file("res://页面/首页/首页.tscn")
 	pass # Replace with function body.
-
 
 func _on_返回_pressed():
 	get_tree().change_scene_to_file("res://页面/初始页面/初始页.tscn")
@@ -43,7 +40,6 @@ func on_login_succeeded(auth):
 	# clear data from last user
 	clear_past_data()
 	# cloud data to local space
-
 	await GlobalVariables.load_data_cloud()
 	GlobalVariables.save_user_data()
 	# animation
@@ -103,5 +99,4 @@ func clear_config_content(config_path):
 	player_config.load(config_path)
 	player_config.clear()
 	player_config.save(config_path)
-
 

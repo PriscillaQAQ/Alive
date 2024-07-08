@@ -50,6 +50,7 @@ func set_figure_ogv(VSP:VideoStreamPlayer,action:String):
 	VSP.loop=true
 	VSP.play()
 	
+	
 
 #####=========================
 ##### 节点相关操作
@@ -108,7 +109,6 @@ func _sort_by_start_time(task1:Task,task2:Task):
 				return true
 			else:
 				return false
-	pass
 
 func _sort_by_ddl(task1:Task,task2:Task):
 	if task1.ddl.is_before(task2.ddl):
@@ -134,7 +134,6 @@ func load_tasks(tasks_path):
 		var task_dic=tasks_config.get_value("tasks",task_dic_id)
 		var task=dic_to_task(task_dic)
 		tasks.append(task)
-	pass
 
 #####=========================
 ##### 成就相关操作
@@ -199,7 +198,7 @@ func load_money_records(money_records_path):
 		var money_record_dic=money_records_config.get_value("money_records",money_record_dic_id)
 		var money_record=dic_to_money_record(money_record_dic)
 		money_records.append(money_record)
-	pass
+
 #####=========================
 ##### 本地数据文件相关操作
 ####==========================
@@ -392,9 +391,6 @@ func load_data_cloud():
 			achievements=[]
 			tasks=[]
 			money_records=[]
-		print(GlobalVariables.life)
-		print(GlobalVariables.mood)
-		print(GlobalVariables.iq)
 	
 func deal_cloudsave_achievements(cloudsave_dic_array:Array):
 	var return_achievements=[]

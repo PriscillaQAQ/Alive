@@ -15,10 +15,6 @@ func _ready():
 	var popup_menu_date=order_date_btn.get_popup()
 	popup_menu_class.id_pressed.connect(_on_select_class)
 	popup_menu_date.id_pressed.connect(_on_select_date)
-	
-	pass # Replace with function body.
-
-
 
 func _on_确认_pressed():
 	get_tree().change_scene_to_file("res://页面/成就/添加成就.tscn")
@@ -81,13 +77,11 @@ func _on_select_date(id:int):
 		prize_square_node.prize=prize
 		prize_container.add_child(prize_square_node)
 		
-		
 func _sort_achievements_asc(achieve1:Achievement,achieve2:Achievement):
 	if achieve1.date.is_before(achieve2.date):
 		return true
 	else:
 		return false
-		
 func _sort_achievements_des(achieve1:Achievement,achieve2:Achievement):
 	if achieve1.date.is_after(achieve2.date):
 		return true
